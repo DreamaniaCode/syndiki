@@ -239,3 +239,69 @@ function setLanguage(lang) {
     // Save Preference
     localStorage.setItem('syndiki_lang', lang);
 }
+
+// Contact Form Handling
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value;
+        const phone = document.getElementById('contactPhone').value;
+        const message = document.getElementById('contactMessage').value;
+
+        const text = `Bonjour, je suis ${name}.\nTéléphone: ${phone}\nMessage: ${message}`;
+        const encodedText = encodeURIComponent(text);
+        const url = `https://wa.me/212755837268?text=${encodedText}`;
+
+        window.open(url, '_blank');
+
+        // Show success message
+        const isAr = html.getAttribute('lang') === 'ar';
+        const msgTitle = isAr ? "تم إرسال الرسالة !" : "Message Envoyé !";
+        const msgDesc = isAr ? "سنرد عليك عبر واتساب في أقرب وقت ممكن." : "Nous vous répondrons sur WhatsApp dans les plus brefs délais.";
+
+        contactForm.innerHTML = `
+            <div style="text-align: center; color: #4ade80; padding: 20px;">
+                <i class="fa-solid fa-check-circle" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                <h3>${msgTitle}</h3>
+                <p style="color: var(--text-dim); margin-top: 10px;">${msgDesc}</p>
+            </div>
+        `;
+    });
+}
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            menuToggle.querySelector('i').classList.remove('fa-xmark');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+        }
+    });
+
+    // Close menu when clicking a link
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.querySelector('i').classList.remove('fa-xmark');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+        });
+    });
+}
