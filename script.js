@@ -33,6 +33,12 @@ const translations = {
         tuto3Title: "Dashboard Financier",
         tuto3Desc: "Une vue d'ensemble sur la santé financière. Suivez les recettes et dépenses en temps réel.",
 
+        testiTitle: "Ils nous font confiance",
+        testiSubtitle: "Découvrez les avis de nos utilisateurs au Maroc et en France",
+        testi1Text: '"Enfin un logiciel adapté à la réalité marocaine. La gestion des cotisations est devenue un jeu d\'enfant."',
+        testi2Text: '"Je gère une petite copropriété à Paris et Syndiki est parfait. Simple, pas cher et efficace."',
+        testi3Text: '"Le support technique est très réactif. J\'ai pu configurer mon immeuble en moins d\'une heure."',
+
         featuresTitle: "Fonctionnalités Principales",
         featuresSubtitle: "Tout ce dont vous avez besoin pour une gestion saine et transparente",
         featResidentsTitle: "Gestion des Résidents",
@@ -60,7 +66,13 @@ const translations = {
 
         plan6Months: "Semestriel",
         period6Months: "/ 6 Mois",
-        saveMoney: "Économisez 200 MAD",
+        saveMoney: "Économisez 150 MAD",
+
+        planOnline: "Syndiki en Ligne",
+        badgeCloud: "100% Cloud",
+        featCloudAccess: "Accès partout",
+        featMultiUser: "Multi-utilisateurs",
+        featBackupAuto: "Sauvegarde Auto",
 
         plan12Months: "Annuel",
         periodYear: "/ An",
@@ -123,6 +135,12 @@ const translations = {
         tuto3Title: "لوحة القيادة المالية",
         tuto3Desc: "نظرة شاملة على الصحة المالية للمبنى. تتبع المداخيل والمصاريف بشكل آني.",
 
+        testiTitle: "هم يثقون بنا",
+        testiSubtitle: "اكتشف آراء مستخدمينا في المغرب وفرنسا",
+        testi1Text: '"أخيراً برنامج يناسب الواقع المغربي. إدارة المساهمات أصبحت لعبة أطفال."',
+        testi2Text: '"أدير ملكية مشتركة صغيرة في باريس و Syndiki مثالي. بسيط، رخيص وفعال."',
+        testi3Text: '"الدعم الفني سريع جداً. تمكنت من إعداد عمارتي في أقل من ساعة."',
+
         featuresTitle: "المميزات الرئيسية",
         featuresSubtitle: "كل ما تحتاجه لإدارة سليمة وشفافة",
         featResidentsTitle: "إدارة السكان",
@@ -150,7 +168,13 @@ const translations = {
 
         plan6Months: "نصف سنوي",
         period6Months: "/ 6 أشهر",
-        saveMoney: "وفر 200 درهم",
+        saveMoney: "وفر 150 درهم",
+
+        planOnline: "سنديك أونلاين",
+        badgeCloud: "100% سحابي",
+        featCloudAccess: "وصول من أي مكان",
+        featMultiUser: "متعدد المستخدمين",
+        featBackupAuto: "نسخ احتياطي تلقائي",
 
         plan12Months: "سنوي",
         periodYear: "/ سنة",

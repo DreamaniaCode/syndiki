@@ -55,7 +55,11 @@
                 <img src="assets/logo.png" alt="SyndiKi Logo" height="40">
             </div>
 
-            <div class="nav-controls">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-controls" id="navMenu">
                 <button id="langToggle" class="btn-text">
                     <i class="fa-solid fa-globe"></i>
                     <span id="currentLang">العربية</span>
@@ -187,6 +191,79 @@
             </div>
         </section>
 
+        <!-- Testimonials -->
+        <section id="testimonials" class="container section-padding">
+            <div class="section-header">
+                <h2 data-i18n="testiTitle">Ils nous font confiance</h2>
+                <p data-i18n="testiSubtitle">Découvrez les avis de nos utilisateurs au Maroc et en France</p>
+            </div>
+            <div class="testimonials-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Testimonial 1 (Maroc) -->
+                <div class="glass-card" style="padding: 30px;">
+                    <div style="color: #fbbf24; margin-bottom: 15px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-dim); margin-bottom: 20px;" data-i18n="testi1Text">
+                        "Enfin un logiciel adapté à la réalité marocaine. La gestion des cotisations est devenue un jeu
+                        d'enfant."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">
+                            KA</div>
+                        <div>
+                            <div style="font-weight: bold;">Karim A.</div>
+                            <div style="font-size: 0.85rem; color: var(--text-dim);">Casablanca, Maroc</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 (France) -->
+                <div class="glass-card" style="padding: 30px;">
+                    <div style="color: #fbbf24; margin-bottom: 15px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-dim); margin-bottom: 20px;" data-i18n="testi2Text">
+                        "Je gère une petite copropriété à Paris et Syndiki est parfait. Simple, pas cher et efficace."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--secondary);">
+                            SM</div>
+                        <div>
+                            <div style="font-weight: bold;">Sophie M.</div>
+                            <div style="font-size: 0.85rem; color: var(--text-dim);">Paris, France</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 (Maroc) -->
+                <div class="glass-card" style="padding: 30px;">
+                    <div style="color: #fbbf24; margin-bottom: 15px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-dim); margin-bottom: 20px;" data-i18n="testi3Text">
+                        "Le support technique est très réactif. J'ai pu configurer mon immeuble en moins d'une heure."
+                    </p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div
+                            style="width: 50px; height: 50px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary);">
+                            OL</div>
+                        <div>
+                            <div style="font-weight: bold;">Omar L.</div>
+                            <div style="font-size: 0.85rem; color: var(--text-dim);">Tanger, Maroc</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section (SEO Keywords) -->
         <section class="container section-padding">
             <div class="section-header">
@@ -260,15 +337,15 @@
                 <div class="pricing-card glass-card">
                     <div class="pricing-header">
                         <h3 data-i18n="plan6Months">Semestriel</h3>
-                        <div class="price">700 <span class="currency">MAD</span></div>
+                        <div class="price">750 <span class="currency">MAD</span></div>
                         <div class="period" data-i18n="period6Months">/ 6 Mois</div>
-                        <div class="save-badge" data-i18n="saveMoney">Économisez 200 MAD</div>
+                        <div class="save-badge" data-i18n="saveMoney">Économisez 150 MAD</div>
                     </div>
                     <ul class="pricing-features">
                         <li data-i18n="featUpdates">Mises à jour incluses</li>
                         <li data-i18n="featSupport">Support Prioritaire</li>
                     </ul>
-                    <a href="https://wa.me/212755837268?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20l'abonnement%20Semestriel%20(700%20MAD)"
+                    <a href="https://wa.me/212755837268?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20l'abonnement%20Semestriel%20(750%20MAD)"
                         class="btn btn-primary" target="_blank" data-i18n="btnSubscribe">Choisir</a>
                 </div>
 
@@ -286,6 +363,24 @@
                         <li data-i18n="featSupportVIP">Support VIP</li>
                     </ul>
                     <a href="https://wa.me/212755837268?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20l'abonnement%20Annuel%20(1300%20MAD)"
+                        class="btn btn-primary" target="_blank" data-i18n="btnSubscribe">Choisir</a>
+                </div>
+
+                <!-- Syndiki Online -->
+                <div class="pricing-card glass-card" style="border-color: var(--secondary);">
+                    <div class="pricing-header">
+                        <h3 data-i18n="planOnline">Syndiki en Ligne</h3>
+                        <div class="price">4800 <span class="currency">MAD</span></div>
+                        <div class="period" data-i18n="periodYear">/ An</div>
+                        <div class="save-badge" style="background: rgba(139, 92, 246, 0.2); color: #a78bfa;"
+                            data-i18n="badgeCloud">100% Cloud</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="featCloudAccess">Accès partout</li>
+                        <li data-i18n="featMultiUser">Multi-utilisateurs</li>
+                        <li data-i18n="featBackupAuto">Sauvegarde Auto</li>
+                    </ul>
+                    <a href="https://wa.me/212755837268?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20Syndiki%20en%20Ligne%20(4800%20MAD)"
                         class="btn btn-primary" target="_blank" data-i18n="btnSubscribe">Choisir</a>
                 </div>
 
@@ -328,18 +423,18 @@
                     </div>
                 </div>
 
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label data-i18n="formName">Nom Complet</label>
-                        <input type="text" class="form-input">
+                        <input type="text" class="form-input" id="contactName" required>
                     </div>
                     <div class="form-group">
                         <label data-i18n="formPhone">Téléphone</label>
-                        <input type="tel" class="form-input">
+                        <input type="tel" class="form-input" id="contactPhone" required>
                     </div>
                     <div class="form-group">
                         <label data-i18n="formMessage">Message</label>
-                        <textarea class="form-input" rows="4"></textarea>
+                        <textarea class="form-input" rows="4" id="contactMessage" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" data-i18n="formSend">Envoyer</button>
                 </form>
