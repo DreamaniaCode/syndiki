@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyndiKi - Logiciel de Gestion de Syndic de Copropriété au Maroc</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="SyndiKi est le meilleur logiciel de gestion de syndic au Maroc. Gérez facilement les résidents, les cotisations, et les dépenses. Essai gratuit disponible.">
+    <meta name="keywords"
+        content="syndic, maroc, gestion copropriété, logiciel syndic, application syndic, immobilier, facturation, cotisations, rapports financiers">
+    <meta name="author" content="DreamaniaCode">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://syndiki.online/">
+    <meta property="og:title" content="SyndiKi - Gestion de Syndic Simplifiée">
+    <meta property="og:description"
+        content="Une solution tout-en-un pour gérer votre copropriété au Maroc. Simple, transparent et puissant.">
+    <meta property="og:image" content="https://syndiki.online/assets/dashboard.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://syndiki.online/">
+    <meta property="twitter:title" content="SyndiKi - Gestion de Syndic Simplifiée">
+    <meta property="twitter:description"
+        content="Une solution tout-en-un pour gérer votre copropriété au Maroc. Simple, transparent et puissant.">
+    <meta property="twitter:image" content="https://syndiki.online/assets/dashboard.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-blur bg-blur-1"></div>
+    <div class="bg-blur bg-blur-2"></div>
+
+    <header class="container">
+        <nav>
+            <div class="logo">
+                <img src="assets/logo.png" alt="SyndiKi Logo" height="40">
+            </div>
+
+            <div class="nav-controls">
+                <button id="langToggle" class="btn-text">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="currentLang">العربية</span>
+                </button>
+                <a href="#pricing" class="btn btn-primary" data-i18n="navPricing">Tarifs</a>
+                <a href="#download" class="btn btn-secondary" data-i18n="downloadBtn">Télécharger</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div class="hero-content">
+                <div class="badge" data-i18n="versionBadge">Version 3.2.1 Disponible</div>
+                <h1 data-i18n="heroTitle">La Gestion de Syndic <br><span class="gradient-text">Réinventée</span></h1>
+                <p data-i18n="heroSubtitle">Une solution tout-en-un pour gérer votre copropriété au Maroc. Simple,
+                    transparent et puissant.</p>
+
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary btn-lg">
+                        <i class="fa-brands fa-windows"></i>
+                        <span data-i18n="downloadWindows">Télécharger pour Windows</span>
+                    </a>
+                    <a href="#tutorials" class="btn btn-secondary btn-lg" data-i18n="learnMore">Découvrir</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="assets/dashboard.png" alt="SyndiKi Dashboard" class="app-mockup glass-card"
+                    style="width: 100%; height: auto; padding: 0;">
+            </div>
+        </section>
+
+        <!-- Use Cases / Tutorials Section -->
+        <section id="tutorials" class="container section-padding">
+            <div class="section-header">
+                <h2 data-i18n="tutoTitle">Comment ça marche ?</h2>
+                <p data-i18n="tutoSubtitle">Découvrez SyndiKi en action</p>
+            </div>
+
+            <div class="tutorials-grid">
+                <div class="tuto-card glass-card">
+                    <div class="tuto-img-container">
+                        <img src="assets/add_resident.png" alt="Add Resident" class="tuto-img">
+                    </div>
+                    <h3 data-i18n="tuto1Title">Ajouter un Résident</h3>
+                    <p data-i18n="tuto1Desc">En quelques clics, enregistrez un nouveau copropriétaire ou locataire.</p>
+                </div>
+                <div class="tuto-card glass-card">
+                    <div class="tuto-img-container">
+                        <img src="assets/payments.png" alt="Payments Management" class="tuto-img">
+                    </div>
+                    <h3 data-i18n="tuto2Title">Gérer les Paiements</h3>
+                    <p data-i18n="tuto2Desc">Suivez qui a payé et qui est en retard avec des indicateurs clairs.</p>
+                </div>
+                <div class="tuto-card glass-card">
+                    <div class="tuto-img-container">
+                        <img src="assets/reports.png" alt="Financial Reports" class="tuto-img">
+                    </div>
+                    <h3 data-i18n="tuto3Title">Dashboard Financier</h3>
+                    <p data-i18n="tuto3Desc">Une vue d'ensemble sur la santé financière de votre immeuble.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us (SEO Text Rich) -->
+        <section class="container section-padding">
+            <div class="glass-card" style="padding: 40px;">
+                <div class="section-header">
+                    <h2 data-i18n="whyTitle">Pourquoi choisir SyndiKi pour votre copropriété ?</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; color: var(--text-dim);">
+                    <p data-i18n="whyText1" style="margin-bottom: 20px;">
+                        Gérer une copropriété au Maroc peut être un défi complexe. Entre la collecte des cotisations, le
+                        suivi des dépenses d'entretien, et la communication avec les résidents, les syndics bénévoles et
+                        professionnels se retrouvent souvent débordés.
+                    </p>
+                    <p data-i18n="whyText2" style="margin-bottom: 20px;">
+                        <strong>SyndiKi</strong> a été conçu spécifiquement pour répondre aux besoins du marché
+                        marocain. Notre logiciel simplifie chaque aspect de la gestion immobilière. Fini les fichiers
+                        Excel complexes et les reçus papier perdus. Avec SyndiKi, vous centralisez tout : historique des
+                        paiements, état de la trésorerie, et fiche technique de chaque appartement.
+                    </p>
+                    <p data-i18n="whyText3">
+                        En choisissant notre solution, vous optez pour la transparence. Les rapports financiers clairs
+                        instaurent la confiance entre le syndic et les copropriétaires, garantissant ainsi une meilleure
+                        ambiance au sein de votre immeuble et un meilleur taux de recouvrement des frais de syndic.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features container">
+            <div class="section-header">
+                <h2 data-i18n="featuresTitle">Fonctionnalités Principales</h2>
+                <p data-i18n="featuresSubtitle">Tout ce dont vous avez besoin pour une gestion saine</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3 data-i18n="featResidentsTitle">Gestion des Résidents</h3>
+                    <p data-i18n="featResidentsDesc">Suivez les propriétaires et locataires par appartement. Profils
+                        détaillés et historique.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                    <h3 data-i18n="featPaymentsTitle">Suivi des Paiements</h3>
+                    <p data-i18n="featPaymentsDesc">Enregistrez les cotisations, générez des reçus et suivez les impayés
+                        en temps réel.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3 data-i18n="featReportsTitle">Rapports Financiers</h3>
+                    <p data-i18n="featReportsDesc">Des tableaux de bord clairs pour visualiser les revenus, les dépenses
+                        et le solde de caisse.</p>
+                </div>
+
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i class="fa-solid fa-print"></i></div>
+                    <h3 data-i18n="featPrintTitle">Impression & Export</h3>
+                    <p data-i18n="featPrintDesc">Exportez vos données en Excel ou imprimez les fiches résidents en un
+                        clic.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (SEO Keywords) -->
+        <section class="container section-padding">
+            <div class="section-header">
+                <h2 data-i18n="faqTitle">Questions Fréquentes</h2>
+            </div>
+            <div class="glass-card" style="padding: 40px;">
+                <div class="faq-grid" style="display: grid; gap: 30px; text-align: left;">
+                    <div>
+                        <h3 data-i18n="faq1Q" style="margin-bottom: 10px; color: var(--primary);">Le logiciel
+                            fonctionne-t-il sans internet ?</h3>
+                        <p data-i18n="faq1A" style="color: var(--text-dim);">Oui ! SyndiKi est une application de bureau
+                            qui fonctionne parfaitement hors ligne. Vos données sont stockées localement sur votre
+                            ordinateur pour une sécurité maximale.</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="faq2Q" style="margin-bottom: 10px; color: var(--primary);">Est-ce adapté aux
+                            syndics bénévoles ?</h3>
+                        <p data-i18n="faq2A" style="color: var(--text-dim);">Absolument. Nous avons simplifié
+                            l'interface pour qu'aucune compétence comptable ne soit nécessaire. C'est l'outil idéal pour
+                            les syndics de copropriété bénévoles.</p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="faq3Q" style="margin-bottom: 10px; color: var(--primary);">Puis-je gérer
+                            plusieurs immeubles ?</h3>
+                        <p data-i18n="faq3A" style="color: var(--text-dim);">Oui, SyndiKi permet de gérer plusieurs
+                            résidences ou blocs d'appartements au sein de la même interface.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="container section-padding">
+            <div class="section-header">
+                <h2 data-i18n="pricingTitle">Tarifs Simples et Transparents</h2>
+                <p data-i18n="pricingSubtitle">Choisissez le plan qui vous convient</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Free Trial -->
+                <div class="pricing-card glass-card">
+                    <div class="pricing-header">
+                        <h3 data-i18n="planTrial">Essai Gratuit</h3>
+                        <div class="price">0 <span class="currency">MAD</span></div>
+                        <div class="period" data-i18n="period7Days">7 Jours</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="featAllAccess">Accès Complet</li>
+                        <li data-i18n="featNoCommit">Sans Engagement</li>
+                    </ul>
+                    <a href="https://wa.me/212755837268?text=Je%20veux%20essayer%20la%20version%20gratuite%20de%20SyndiKi"
+                        class="btn btn-secondary" target="_blank" data-i18n="btnStartTrial">Commencer</a>
+                </div>
+
+                <!-- Monthly -->
+                <div class="pricing-card glass-card">
+                    <div class="pricing-header">
+                        <h3 data-i18n="planMonthly">Mensuel</h3>
+                        <div class="price">150 <span class="currency">MAD</span></div>
+                        <div class="period" data-i18n="periodMonth">/ Mois</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="featUpdates">Mises à jour incluses</li>
+                        <li data-i18n="featSupport">Support Standard</li>
+                    </ul>
+                    <a href="https://wa.me/212755837268?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20l'abonnement%20Mensuel%20(150%20MAD)"
+                        class="btn btn-secondary" target="_blank" data-i18n="btnSubscribe">S'abonner</a>
+                </div>
+
+                <!-- 6 Months -->
+                <div class="pricing-card glass-card">
+                    <div class="pricing-header">
+                        <h3 data-i18n="plan6Months">Semestriel</h3>
+                        <div class="price">700 <span class="currency">MAD</span></div>
+                        <div class="period" data-i18n="period6Months">/ 6 Mois</div>
+                        <div class="save-badge" data-i18n="saveMoney">Économisez 200 MAD</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="featUpdates">Mises à jour incluses</li>
+                        <li data-i18n="featSupport">Support Prioritaire</li>
+                    </ul>
+                    <a href="https://wa.me/212755837268?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20l'abonnement%20Semestriel%20(700%20MAD)"
+                        class="btn btn-primary" target="_blank" data-i18n="btnSubscribe">Choisir</a>
+                </div>
+
+                <!-- 12 Months -->
+                <div class="pricing-card glass-card popular">
+                    <div class="popular-tag" data-i18n="tagPopular">Populaire</div>
+                    <div class="pricing-header">
+                        <h3 data-i18n="plan12Months">Annuel</h3>
+                        <div class="price">1300 <span class="currency">MAD</span></div>
+                        <div class="period" data-i18n="periodYear">/ An</div>
+                        <div class="save-badge" data-i18n="saveMoneyYear">Économisez 500 MAD</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="featUpdates">Mises à jour incluses</li>
+                        <li data-i18n="featSupportVIP">Support VIP</li>
+                    </ul>
+                    <a href="https://wa.me/212755837268?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20l'abonnement%20Annuel%20(1300%20MAD)"
+                        class="btn btn-primary" target="_blank" data-i18n="btnSubscribe">Choisir</a>
+                </div>
+
+                <!-- Lifetime -->
+                <div class="pricing-card glass-card lifetime">
+                    <div class="pricing-header">
+                        <h3 data-i18n="planLifetime">A Vie</h3>
+                        <div class="price">2500 <span class="currency">MAD</span></div>
+                        <div class="period" data-i18n="periodLife">Paiement unique</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li data-i18n="featLifetimeAccess">Licence à Vie</li>
+                        <li data-i18n="featFreeUpdates">Mises à jour gratuites à vie</li>
+                        <li data-i18n="featSupportVIP">Support VIP</li>
+                    </ul>
+                    <a href="https://wa.me/212755837268?text=Je%20suis%20int%C3%A9ress%C3%A9%20par%20la%20Licence%20%C3%A0%20Vie%20(2500%20MAD)"
+                        class="btn btn-primary" target="_blank" data-i18n="btnBuyNow">Acheter Maintenant</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container section-padding">
+            <div class="contact-wrapper glass-card">
+                <div class="contact-info">
+                    <h2 data-i18n="contactTitle">Contactez-nous</h2>
+                    <p data-i18n="contactSubtitle">Une question ? Besoin d'une démo ?</p>
+
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span dir="ltr">07 55 83 72 68</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://wa.me/212755837268" target="_blank">WhatsApp Direct</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>contact@syndiki.com</span>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label data-i18n="formName">Nom Complet</label>
+                        <input type="text" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="formPhone">Téléphone</label>
+                        <input type="tel" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="formMessage">Message</label>
+                        <textarea class="form-input" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-i18n="formSend">Envoyer</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- WhatsApp Float -->
+        <a href="https://wa.me/212755837268" class="whatsapp-float" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <!-- Trust Section -->
+        <section class="trust container">
+            <div class="trust-content glass-card">
+                <div class="stat">
+                    <div class="stat-number">+100</div>
+                    <div class="stat-label" data-i18n="statBuildings">Immeubles Gérés</div>
+                </div>
+                <div class="divider"></div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label" data-i18n="statOffline">Hors Ligne & Sécurisé</div>
+                </div>
+                <div class="divider"></div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label" data-i18n="statSupport">Support Dédié</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="download container">
+            <div class="download-card glass-card">
+                <h2 data-i18n="ctaTitle">Prêt à simplifier votre gestion ?</h2>
+                <p data-i18n="ctaSubtitle">Téléchargez SyndiKi maintenant et prenez le contrôle.</p>
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        <i class="fa-brands fa-windows"></i>
+                        <span data-i18n="downloadWindows">Télécharger pour Windows</span>
+                        <small data-i18n="versionInfo">v3.2.1 • 64-bit</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="copyright">
+                &copy; 2026 SyndiKi Manager. <span data-i18n="copyright">Tous droits réservés.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
