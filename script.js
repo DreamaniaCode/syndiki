@@ -311,35 +311,35 @@ if (demoForm) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Traitement...';
 
-        // Prepare data
-        const data = {
-            building: building,
-            contactType: contactType,
-            contactValue: contactValue
-        };
+        // Prepare data for FormSubmit
+        const formData = new FormData();
+        formData.append('building', building);
+        formData.append('contact_type', contactType);
+        formData.append('contact', contactValue);
+        // Important: Use your real email here to receive the leads!
+        // The first time you submit, you will receive an activation email.
+        const DESTINATION_EMAIL = "info@syndiki.online"; // REPLACE_ME
+        formData.append('_subject', 'Nouvelle demande de démo SyndiKi');
+        formData.append('_template', 'table');
+        formData.append('_captcha', 'false');
 
-        // Send to backend
-        fetch('save_lead.php', {
+        // Send to FormSubmit
+        fetch(`https://formsubmit.co/ajax/${DESTINATION_EMAIL}`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
+            body: formData
         })
             .then(response => {
-                // Regardless of success/fail, show the links (Graceful Degradation)
-                // We don't want to block the user if the simple PHP script fails
+                // Success: Show links
                 document.getElementById('demoContent').style.display = 'none';
                 document.getElementById('demoSuccess').style.display = 'block';
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Show links anyway
+                // Graceful degradation: Show links anyway if backend fails
                 document.getElementById('demoContent').style.display = 'none';
                 document.getElementById('demoSuccess').style.display = 'block';
             })
             .finally(() => {
-                // Reset button just in case
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
             });
