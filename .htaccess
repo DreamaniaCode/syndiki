@@ -1,0 +1,9 @@
+# Enable PHP Execution (Bluehost/Apache)
+AddHandler application/x-httpd-php .php
+AddHandler application/x-httpd-php7 .php
+AddHandler application/x-httpd-php8 .php
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+</IfModule>
