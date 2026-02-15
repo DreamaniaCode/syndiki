@@ -87,18 +87,31 @@ const translations = {
         btnBuyNow: "Acheter Maintenant",
 
         contactTitle: "Contactez-nous",
-        contactSubtitle: "Une question ? Besoin d'une démo ?",
+        contactSubtitle: "Une question ? Besoin d'une démo (version Web) ?",
         formName: "Nom Complet",
         formPhone: "Téléphone",
         formMessage: "Message",
         formSend: "Envoyer",
+
+        // Demo Section
+        demoTitle: "Obtenir une Démo",
+        demoSubtitle: "Testez SyndiKi gratuitement dès maintenant.",
+        demoBuilding: "Nom de l'Immeuble / Résidence",
+        demoContactType: "Moyen de Contact",
+        demoContactValue: "Numéro / Email",
+        demoSubmit: "Obtenir les liens",
+        demoSuccessTitle: "C'est parti !",
+        demoSuccessDesc: "Voici vos liens d'accès. Vos identifiants de connexion vous seront envoyés sur votre contact.",
+        demoLinkOffline: "Télécharger (Offline)",
+        demoLinkOnline: "Accéder à la version Cloud",
+        demoCheckContact: "Vérifiez votre WhatsApp/Email pour vos accès.",
 
         statBuildings: "Immeubles Gérés",
         statOffline: "Hors Ligne & Sécurisé",
         statSupport: "Support Dédié",
         ctaTitle: "Prêt à simplifier votre gestion ?",
         ctaSubtitle: "Téléchargez SyndiKi maintenant et prenez le contrôle.",
-        versionInfo: "v3.2.1 • 64-bit",
+        versionInfo: "v3.3.1 • 64-bit",
         copyright: "Tous droits réservés."
     },
     ar: {
@@ -120,7 +133,7 @@ const translations = {
         faq3A: "نعم، النسخة الكاملة من SyndiKi تمكنك من إدارة عدة إقامات أو مجمعات سكنية في نفس الواجهة السهلة.",
 
         downloadBtn: "تحميل",
-        versionBadge: "الإصدار 3.2.1 متوفر الآن",
+        versionBadge: "الإصدار 3.3.1 متوفر الآن",
         heroTitle: "إدارة السنديك <br><span class='gradient-text'>بمفهوم جديد</span>",
         heroSubtitle: "الحل الشامل لإدارة الملكية المشتركة في المغرب. بسيط، شفاف وقوي.",
         downloadWindows: "تحميل لنظام الويندوز",
@@ -189,18 +202,31 @@ const translations = {
         btnBuyNow: "شراء الآن",
 
         contactTitle: "اتصل بنا",
-        contactSubtitle: "لديك سؤال؟ تحتاج إلى عرض توضيحي؟",
+        contactSubtitle: "لديك سؤال؟ تحتاج إلى عرض توضيحي (نسخة الويب)؟",
         formName: "الاسم الكامل",
         formPhone: "الهاتف",
         formMessage: "الرسالة",
         formSend: "إرسال",
+
+        // Demo Section
+        demoTitle: "احصل على تجربة مجانية",
+        demoSubtitle: "جرب SyndiKi الآن مجاناً.",
+        demoBuilding: "اسم الإقامة / العمارة",
+        demoContactType: "وسيلة التواصل",
+        demoContactValue: "رقم الهاتف / البريد الإلكتروني",
+        demoSubmit: "الحصول على الروابط",
+        demoSuccessTitle: "لنبدأ !",
+        demoSuccessDesc: "إليك روابط الدخول. سيتم إرسال بيانات الدخول إلى وسيلة التواصل الخاصة بك.",
+        demoLinkOffline: "تحميل (بدون أنترنت)",
+        demoLinkOnline: "الدخول للنسخة السحابية",
+        demoCheckContact: "تحقق من الواتساب / البريد الإلكتروني للحصول على بيانات الدخول.",
 
         statBuildings: "عمارة مسيرة",
         statOffline: "دون أنترنت وآمن",
         statSupport: "دعم فني",
         ctaTitle: "مستعد لتسهيل التسيير ؟",
         ctaSubtitle: "حمل SyndiKi الآن وتحكم في إدارة عمارتك.",
-        versionInfo: "نسخة 3.2.1 • 64-بت",
+        versionInfo: "نسخة 3.3.1 • 64-بت",
         copyright: "جميع الحقوق محفوظة."
     }
 };
@@ -267,6 +293,56 @@ if (contactForm) {
                 <p style="color: var(--text-dim); margin-top: 10px;">${msgDesc}</p>
             </div>
         `;
+    });
+}
+
+// Demo Form Handling
+const demoForm = document.getElementById('demoForm');
+if (demoForm) {
+    demoForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const building = document.getElementById('demoBuildingName').value;
+        const contactType = document.getElementById('demoContactType').value;
+        const contactValue = document.getElementById('demoContactValue').value;
+        const submitBtn = demoForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Traitement...';
+
+        // Prepare data
+        const data = {
+            building: building,
+            contactType: contactType,
+            contactValue: contactValue
+        };
+
+        // Send to backend
+        fetch('save_lead.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                // Regardless of success/fail, show the links (Graceful Degradation)
+                // We don't want to block the user if the simple PHP script fails
+                document.getElementById('demoContent').style.display = 'none';
+                document.getElementById('demoSuccess').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Show links anyway
+                document.getElementById('demoContent').style.display = 'none';
+                document.getElementById('demoSuccess').style.display = 'block';
+            })
+            .finally(() => {
+                // Reset button just in case
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            });
     });
 }
 
