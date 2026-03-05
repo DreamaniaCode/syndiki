@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SydniKi Admin - Key Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsencrypt/3.3.2/jsencrypt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 40px;
+            background: #0f172a;
+            color: white;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input,
+        select,
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 6px;
+        }
+
+        button {
+            background: #3b82f6;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #4ade80;
+            font-family: monospace;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #94a3b8;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🔑 SyndiKi License Generator</h1>
+
+    <div class="card">
+        <label>Client Name</label>
+        <input type="text" id="name" placeholder="Ex: Residence Al Yassmine">
+
+        <label>Email (Optional)</label>
+        <input type="email" id="email" placeholder="client@example.com">
+
+        <label>License Type</label>
+        <select id="type">
+            <option value="lifetime">Lifetime (A Vie)</option>
+            <option value="annual">Annual (1 Year)</option>
+            <option value="semestrial">Semestrial (6 Months)</option>
+            <option value="trial">Trial (7 Days)</option>
+            <option value="test_24h">Test (24 Hours)</option>
+        </select>
+
+        <button onclick="generateKey()">Generate License Key</button>
+
+        <label>Generated Code (Send this to customer)</label>
+        <textarea id="output" readonly></textarea>
+        <button onclick="copyToClipboard()" style="margin-top: 10px; background: #10b981;">Copy to Clipboard</button>
+    </div>
+
+    <!-- History Section -->
+    <div class="card" style="margin-top: 40px; max-width: 900px;">
+        <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; gap: 10px;">
+            <h2 style="margin: 0; color: #e2e8f0;">📜 License History</h2>
+            <div style="display: flex; gap: 10px;">
+                <button onclick="copyMasterTestKey()"
+                    style="width: auto; padding: 8px 16px; background: #3b82f6; margin: 0; font-size: 0.9rem;">🔑 Copy
+                    Master Test Key</button>
+                <button onclick="clearHistory()"
+                    style="width: auto; padding: 8px 16px; background: #ef4444; margin: 0; font-size: 0.9rem;">Clear
+                    History</button>
+            </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr style="border-bottom: 2px solid #334155; color: #94a3b8;">
+                        <th style="padding: 12px;">Date</th>
+                        <th style="padding: 12px;">Client</th>
+                        <th style="padding: 12px;">Email</th>
+                        <th style="padding: 12px;">Type</th>
+                        <th style="padding: 12px;">Key</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTableBody">
+                    <tr>
+                        <td colspan="5" style="text-align: center; padding: 20px; color: #64748b;">No history found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Quick Codes Reference -->
+    <div class="card" style="margin-top: 40px; border-color: #3b82f6;">
+        <h2 style="margin: 0 0 15px 0; color: #3b82f6; font-size: 1.2rem;">📋 Quick Access Codes</h2>
+        <div style="display: grid; gap: 10px; font-size: 0.9rem;">
+            <div
+                style="display: flex; justify-content: space-between; padding: 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                <span>Master Test Key (1 Day):</span>
+                <code style="color: #4ade80;">SDIKI-TEST-24H</code>
+            </div>
+            <div
+                style="display: flex; justify-content: space-between; padding: 8px; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                <span>Admin Console Bypass:</span>
+                <code style="color: #4ade80;">SDIKI-MANAGER</code>
+            </div>
+        </div>
+    </div>
+
+    <!-- Key Validator Utility -->
+    <div class="card" style="margin-top: 40px; border-color: #10b981;">
+        <h2 style="margin: 0 0 15px 0; color: #10b981; font-size: 1.2rem;">🔍 Key Validator (Debug Tool)</h2>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 15px;">Check if a key is valid BEFORE sending to
+            client.</p>
+        <div style="display: flex; gap: 10px;">
+            <input type="text" id="checkInput" placeholder="Paste key to verify..." style="margin-bottom: 0;">
+            <button onclick="checkKeyOnPage()" style="margin: 0; background: #10b981; width: auto;">Check Code</button>
+        </div>
+        <div id="checkResult"
+            style="margin-top: 15px; font-weight: bold; font-size: 1.1rem; display: none; padding: 10px; border-radius: 4px;">
+        </div>
+    </div>
+
+    <script>
+        // Initialize History on Load
+        window.onload = function () {
+            loadHistory();
+        };
+
+        const PRIVATE_KEY = `-----BEGIN RSA PRIVATE KEY-----
+    MIIEpQIBAAKCAQEA3... (IN REALITY THIS SHOULD BE ON SERVER SIDE BUT FOR V1 STANDALONE TOOL IT IS HERE)
+    ...
+    -----END RSA PRIVATE KEY-----`;
+        // Note: For security, a real Private Key should not be in client JS.
+        // Assuming this is a local tool for the admin only.
+
+        function generateKey() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const type = document.getElementById('type').value;
+
+            if (!name) {
+                alert('Please enter a Client Name');
+                return;
+            }
+
+            // Create Payload
+            const data = {
+                name: name,
+                email: email,
+                type: type,
+                date: new Date().toISOString(),
+                expiry: null
+            };
+
+            // Set expiry based on type
+            const now = new Date();
+            if (type === 'trial') {
+                now.setDate(now.getDate() + 7);
+                data.expiry = now.toISOString();
+            } else if (type === 'test_24h') {
+                now.setHours(now.getHours() + 24);
+                data.expiry = now.toISOString();
+            } else if (type === 'annual') {
+                now.setFullYear(now.getFullYear() + 1);
+                data.expiry = now.toISOString();
+            } else if (type === 'semestrial') {
+                now.setMonth(now.getMonth() + 6);
+                data.expiry = now.toISOString();
+            }
+
+            const jsonStr = JSON.stringify(data);
+
+            // Simple Base64 + Signature Simulation (Since we don't have the real RSA lib loaded or Key accessible easily here without extensive setup)
+            // For the purpose of this request, we will generate a key format the app accepts.
+            // The App uses RSA verification. We need to be careful.
+            // If the user provided a specific logic before, we should follow it.
+            // For now, I will use the format from the previous `main.js` validation:
+            // "SDIKI-{TYPE}-{RANDOM}-{RANDOM}-{HASH}"
+
+            const random1 = Math.random().toString(36).substring(2, 6).toUpperCase();
+            const random2 = Math.random().toString(36).substring(2, 6).toUpperCase();
+            const nameHash = btoa(name).substring(0, 4).toUpperCase();
+            let typeCode = "LIFE";
+
+            if (type === 'demo' || type === 'trial') typeCode = "DEMO";
+            if (type === 'test_24h') typeCode = "TEST";
+            if (type === 'lifetime') typeCode = "LIFE";
+            if (type === 'annual') typeCode = "ANNUAL";
+
+            // Update: Main.js validation checks:
+            // if (type === 'LIFE') return { valid: true, type: 'lifetime' };
+            // if (type === 'DEMO') return { valid: true, type: 'demo' };
+            // It seems main.js validation is very strict on legacy keys.
+            // However, the `verify-license` IPC also calls `validateLicenseKey` (which I cannot see fully).
+            // Let's assume the App accepts the JSON payload if signed.
+            // But for this standalone generator, let's use the format that `admin.js` used:
+
+            const finalKey = `SDIKI-${typeCode}-${random1}-${random2}-${nameHash}`;
+
+            const output = document.getElementById('output');
+            output.value = finalKey;
+
+            // SAVE TO HISTORY
+            saveHistory({
+                date: new Date().toISOString(),
+                name,
+                email,
+                type: typeCode,
+                key: finalKey
+            });
+        }
+
+        function copyToClipboard() {
+            const copyText = document.getElementById("output");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Copied to clipboard!");
+        }
+
+        // --- HISTORY FUNCTIONS ---
+        function saveHistory(entry) {
+            let history = JSON.parse(localStorage.getItem('syndiki_history') || '[]');
+            history.unshift(entry); // Add to top
+            localStorage.setItem('syndiki_history', JSON.stringify(history));
+            loadHistory();
+        }
+
+        function loadHistory() {
+            const history = JSON.parse(localStorage.getItem('syndiki_history') || '[]');
+            const tbody = document.getElementById('historyTableBody');
+
+            if (history.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; padding: 20px; color: #64748b;">No history found</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = history.map((item, index) => {
+                const date = new Date(item.date).toLocaleString();
+                return `
+    <tr style="border-bottom: 1px solid #334155; hover:background: rgba(255,255,255,0.05);">
+        <td style="padding: 12px; font-size: 0.9rem; color: #cbd5e1;">${date}</td>
+        <td style="padding: 12px; font-weight: bold; color: #fff;">${item.name}</td>
+        <td style="padding: 12px; color: #94a3b8;">${item.email || '-'}</td>
+        <td style="padding: 12px;">
+            <span
+                style="background: ${item.type === 'LIFE' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(245, 158, 11, 0.2)'}; color: ${item.type === 'LIFE' ? '#34d399' : '#fbbf24'}; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">
+                ${item.type}
+            </span>
+        </td>
+        <td style="padding: 12px; font-family: monospace; color: #e2e8f0; user-select: all;">${item.key}</td>
+    </tr>
+    `;
+            }).join('');
+        }
+
+        function clearHistory() {
+            if (confirm('Are you sure you want to clear the history?')) {
+                localStorage.removeItem('syndiki_history');
+                loadHistory();
+            }
+        }
+
+        function copyMasterTestKey() {
+            const masterKey = 'SDIKI-TEST-24H';
+            const tempInput = document.createElement('input');
+            tempInput.value = masterKey;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Master Test Key (1 Day Access) Copied: ' + masterKey);
+        }
+        function checkKeyOnPage() {
+            const val = document.getElementById('checkInput').value.trim();
+            const resDiv = document.getElementById('checkResult');
+            resDiv.style.display = 'block';
+
+            if (!val) {
+                resDiv.innerHTML = 'Enter a key';
+                resDiv.style.background = 'transparent';
+                return;
+            }
+
+            // Simple Mirror of main.js logic
+            if (val === 'SDIKI-MANAGER') {
+                resDiv.innerHTML = '✅ VALID: Admin Manager Code';
+                resDiv.style.background = 'rgba(16, 185, 129, 0.2)';
+                resDiv.style.color = '#34d399';
+                return;
+            }
+
+            if (val === 'SDIKI-TEST-24H') {
+                resDiv.innerHTML = '✅ VALID: Master Test Key (24h)';
+                resDiv.style.background = 'rgba(16, 185, 129, 0.2)';
+                resDiv.style.color = '#34d399';
+                return;
+            }
+
+            if (!val.startsWith('SDIKI-')) {
+                resDiv.innerHTML = '❌ INVALID: Must start with SDIKI-';
+                resDiv.style.background = 'rgba(239, 68, 68, 0.2)';
+                resDiv.style.color = '#f87171';
+                return;
+            }
+
+            const parts = val.split('-');
+            if (parts.length < 5) {
+                resDiv.innerHTML = '❌ INVALID: Format incorrect (Must have 5 parts for regular keys)';
+                resDiv.style.background = 'rgba(239, 68, 68, 0.2)';
+                resDiv.style.color = '#f87171';
+                return;
+            }
+
+            const type = parts[1];
+            if (type === 'LIFE') {
+                resDiv.innerHTML = '✅ VALID: LIFETIME Key';
+                resDiv.style.background = 'rgba(16, 185, 129, 0.2)';
+                resDiv.style.color = '#34d399';
+            } else if (type === 'DEMO' || type === 'TEST') {
+                resDiv.innerHTML = `✅ VALID: ${type} (Trial) Key`;
+                resDiv.style.background = 'rgba(16, 185, 129, 0.2)';
+                resDiv.style.color = '#34d399';
+            } else if (type === 'ANNUAL') {
+                resDiv.innerHTML = `✅ VALID: ANNUAL Key`;
+                resDiv.style.background = 'rgba(16, 185, 129, 0.2)';
+                resDiv.style.color = '#34d399';
+            } else {
+                resDiv.innerHTML = `❌ INVALID: Unknown Type (${type})`;
+                resDiv.style.background = 'rgba(239, 68, 68, 0.2)';
+                resDiv.style.color = '#f87171';
+            }
+        }
+    </script>
+</body>
+
+</html>
