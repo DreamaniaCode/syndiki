@@ -18,7 +18,7 @@ const translations = {
         faq3A: "Oui, la version complète de SyndiKi permet de gérer plusieurs résidences ou blocs d'appartements au sein de la même interface simple et intuitive.",
 
         downloadBtn: "Télécharger",
-        versionBadge: "Version 3.3.2 Disponible • <span style='color: #fbbf24; font-weight: bold;'>Nouveau: Pack Test 24h</span>",
+        versionBadge: "Version 3.4.0 v5 Disponible • <span style='color: #fbbf24; font-weight: bold;'>Nouveau: Pack Test 24h</span>",
         heroTitle: "La Gestion de Syndic <br><span class='gradient-text'>Réinventée</span>",
         heroSubtitle: "Une solution tout-en-un pour gérer votre copropriété au Maroc. Simple, transparent et puissant.",
         downloadWindows: "Télécharger pour Windows",
@@ -103,7 +103,7 @@ const translations = {
         statSupport: "Support Dédié",
         ctaTitle: "Prêt à simplifier votre gestion ?",
         ctaSubtitle: "Téléchargez SyndiKi maintenant et prenez le contrôle.",
-        versionInfo: "v3.3.2 • 64-bit",
+        versionInfo: "v3.4.0 v5 • 64-bit",
         copyright: "Tous droits réservés."
     },
     ar: {
@@ -125,7 +125,7 @@ const translations = {
         faq3A: "نعم، النسخة الكاملة من SyndiKi تمكنك من إدارة عدة إقامات أو مجمعات سكنية في نفس الواجهة السهلة.",
 
         downloadBtn: "تحميل",
-        versionBadge: "الإصدار 3.3.2 متوفر الآن • <span style='color: #fbbf24; font-weight: bold;'>جديد: باقة تجريبية 24 ساعة</span>",
+        versionBadge: "الإصدار 3.4.0 v5 متوفر الآن • <span style='color: #fbbf24; font-weight: bold;'>جديد: باقة تجريبية 24 ساعة</span>",
         heroTitle: "إدارة السنديك <br><span class='gradient-text'>بمفهوم جديد</span>",
         heroSubtitle: "الحل الشامل لإدارة الملكية المشتركة في المغرب. بسيط، شفاف وقوي.",
         downloadWindows: "تحميل لنظام الويندوز",
@@ -210,7 +210,7 @@ const translations = {
         statSupport: "دعم فني",
         ctaTitle: "مستعد لتسهيل التسيير ؟",
         ctaSubtitle: "حمل SyndiKi الآن وتحكم في إدارة عمارتك.",
-        versionInfo: "نسخة 3.3.2 • 64-بت",
+        versionInfo: "نسخة 3.4.0 v5 • 64-بت",
         copyright: "جميع الحقوق محفوظة."
     }
 };
