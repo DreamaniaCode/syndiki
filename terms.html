@@ -10,82 +10,96 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            background-color: var(--bg-deep);
+            color: var(--text-white);
+            margin: 0;
+            padding: 0;
         }
 
         .container {
             max-width: 800px;
-            padding: 40px 20px;
+            margin: 0 auto;
+            padding: 80px 20px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 2rem;
             color: var(--secondary);
         }
 
         h2 {
             font-size: 1.5rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            color: var(--text-light);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-white);
+            border-left: 4px solid var(--secondary);
+            padding-left: 1rem;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
             color: var(--text-dim);
-            line-height: 1.6;
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
 
         ul {
-            margin-bottom: 15px;
-            padding-left: 20px;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
             color: var(--text-dim);
         }
 
         li {
-            margin-bottom: 8px;
+            margin-bottom: 0.75rem;
+        }
+
+        .glass-box {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            margin-top: 2rem;
         }
     </style>
 </head>
 
 <body>
+    <div class="bg-mesh"></div>
     <div class="container">
-        <h1>Conditions d'Utilisation</h1>
-        <p>Dernière mise à jour : 05/02/2026</p>
+        <a href="index.html" class="btn btn-secondary" style="margin-bottom: 2rem;">
+            <i class="fa-solid fa-arrow-left"></i> Retour
+        </a>
 
-        <p>En utilisant le logiciel SyndiKi (version Windows ou Cloud), vous acceptez les présentes conditions
-            d'utilisation.</p>
+        <div class="glass-box">
+            <h1>Conditions d'Utilisation</h1>
+            <p>Dernière mise à jour : 05/02/2026</p>
 
-        <h2>1. Licence d'Utilisation</h2>
-        <p>SyndiKi vous accorde une licence limitée, non exclusive et non transférable pour utiliser le logiciel
-            conformément à la formule choisie (Gratuit, Mensuel, Annuel ou A Vie).</p>
+            <p>En utilisant le logiciel SyndiKi (version Windows ou Cloud), vous acceptez les présentes conditions d'utilisation.</p>
 
-        <h2>2. Responsabilités</h2>
-        <p>Vous êtes seul responsable de l'exactitude des données saisies dans le logiciel. SyndiKi ne peut être tenu
-            responsable des erreurs de gestion ou des pertes financières liées à une mauvaise utilisation de l'outil.
-        </p>
+            <h2>1. Licence d'Utilisation</h2>
+            <p>SyndiKi vous accorde une licence limitée, non exclusive et non transférable pour utiliser le logiciel conformément à la formule choisie (Gratuit, Mensuel, Annuel ou A Vie).</p>
 
-        <h2>3. Disponibilité du Service (Cloud)</h2>
-        <p>Nous nous efforçons de maintenir le service accessible 24h/24 et 7j/7, mais nous ne pouvons garantir une
-            disponibilité ininterrompue en cas de maintenance ou de force majeure.</p>
+            <h2>2. Responsabilités</h2>
+            <p>Vous êtes seul responsable de l'exactitude des données saisies dans le logiciel. SyndiKi ne peut être tenu responsable des erreurs de gestion ou des pertes financières liées à une mauvaise utilisation de l'outil.</p>
 
-        <h2>4. Propriété Intellectuelle</h2>
-        <p>Le logiciel, son design et son code source sont la propriété exclusive de DreamaniaCode. Toute reproduction
-            ou ingénierie inverse est interdite.</p>
+            <h2>3. Disponibilité du Service (Cloud)</h2>
+            <p>Nous nous efforçons de maintenir le service accessible 24h/24 et 7j/7, mais nous ne pouvons garantir une disponibilité ininterrompue en cas de maintenance ou de force majeure.</p>
 
-        <h2>5. Résiliation</h2>
-        <p>Nous nous réservons le droit de suspendre votre accès en cas de non-respect des présentes conditions.</p>
+            <h2>4. Propriété Intellectuelle</h2>
+            <p>Le logiciel, son design et son code source sont la propriété exclusive de DreamaniaCode. Toute reproduction ou ingénierie inverse est interdite.</p>
 
-        <h2>6. Loi Applicable</h2>
-        <p>Ces conditions sont régies par les lois du Maroc. Tout litige sera soumis à la compétence exclusive des
-            tribunaux de Casablanca.</p>
+            <h2>5. Résiliation</h2>
+            <p>Nous nous réservons le droit de suspendre votre accès en cas de non-respect des présentes conditions.</p>
 
-        <div style="margin-top: 50px; text-align: center;">
-            <a href="index.html" class="btn btn-secondary">Retour à l'accueil</a>
+            <h2>6. Loi Applicable</h2>
+            <p>Ces conditions sont régies par les lois du Maroc. Tout litige sera soumis à la compétence exclusive des tribunaux de Casablanca.</p>
         </div>
     </div>
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </body>
 
 </html>

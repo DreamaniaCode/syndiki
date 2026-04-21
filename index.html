@@ -2,7 +2,10 @@
 <html lang="fr" dir="ltr">
 
 <head>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>SyndiKi - Premium Syndicate Management Software | Morocco & France</title>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWNS5F02GN"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -11,79 +14,55 @@
         gtag('config', 'G-TWNS5F02GN');
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyndiKi - Premium Syndicate Management Software | Morocco & France</title>
-
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-KRP6GHGG');</script>
-    <!-- End Google Tag Manager -->
-
-    <!-- SEO Meta Tags -->
     <meta name="description" content="SyndiKi is the leading syndicate management software for Morocco and France. Manage residents, collections, and expenses with ease. Available on Windows and Cloud.">
     <meta name="keywords" content="syndic, management, software, morocco, france, co-ownership, property management, billing, reports, cloud, windows">
     <meta name="author" content="DreamaniaCode">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://syndiki.online/">
-    <meta property="og:title" content="SyndiKi - Gestion de Syndic Simplifiée">
-    <meta property="og:description" content="Une solution tout-en-un pour gérer votre copropriété au Maroc. Simple, transparent et puissant.">
+    <meta property="og:title" content="SyndiKi - Gestion de Syndic Elite">
+    <meta property="og:description" content="Le logiciel leader pour gérer votre syndic au Maroc. Sécurité, rapports et relance automatique.">
     <meta property="og:image" content="https://syndiki.online/assets/dashboard_pro.png">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://syndiki.online/">
-    <meta property="twitter:title" content="SyndiKi - Gestion de Syndic Simplifiée">
-    <meta property="twitter:description" content="Une solution tout-en-un pour gérer votre copropriété au Maroc. Simple, transparent et puissant.">
-    <meta property="twitter:image" content="https://syndiki.online/assets/dashboard_pro.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://syndiki.online/">
+    <meta name="twitter:title" content="SyndiKi - Gestion de Syndic Elite">
+    <meta name="twitter:description" content="Le logiciel leader pour gérer votre syndic au Maroc. Sécurité, rapports et relance automatique.">
+    <meta name="twitter:image" content="https://syndiki.online/assets/dashboard_pro.png">
 
-    <!-- Fonts -->
+    <link rel="canonical" href="https://syndiki.online/">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRP6GHGG" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <!-- Background Elements -->
-    <div class="bg-blur bg-blur-1"></div>
-    <div class="bg-blur bg-blur-2"></div>
+    <div class="bg-mesh"></div>
 
     <header id="header">
         <div class="container nav-container">
-            <nav>
-                <a href="#" class="logo">
-                    <img src="assets/logo_transparent.png" alt="SyndiKi Logo">
-                </a>
+            <a href="#" class="logo">
+                <img src="assets/logo_transparent.png" alt="SyndiKi Logo">
+            </a>
 
-                <button class="menu-toggle" id="menuToggle">
-                    <i class="fa-solid fa-bars"></i>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <nav class="nav-links" id="menuLinks">
+                <a href="#features" class="btn btn-secondary" data-i18n="showcaseTitle">Découvrir</a>
+                <a href="#pricing" class="btn btn-secondary" data-i18n="navPricing">Tarifs</a>
+                <a href="#contact" class="btn btn-secondary" data-i18n="navContact">Assistance</a>
+                <button id="langToggle" class="btn btn-secondary glass-btn">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="currentLang">العربية</span>
                 </button>
-
-                <div class="nav-controls" id="navMenu">
-                    <button id="langToggle" class="lang-btn">
-                        <i class="fa-solid fa-globe"></i>
-                        <span id="currentLang">العربية</span>
-                    </button>
-                    <a href="#pricing" class="btn btn-secondary" data-i18n="navPricing">Tarifs</a>
-                    <a href="#download" class="btn btn-primary" data-i18n="downloadBtn">Télécharger</a>
-                </div>
+                <a href="#lead-section" class="btn btn-primary" data-i18n="downloadBtn">Essai Gratuit</a>
             </nav>
         </div>
     </header>
@@ -91,37 +70,105 @@
     <main>
         <!-- Hero Section -->
         <section class="hero container">
-            <div class="hero-content">
-                <div class="badge animate-fade-in" data-i18n="versionBadge">Version 3.4.0 v5 Available • <span class="badge-accent">Nouveau: Pack Test 24h</span></div>
-                <h1 data-i18n="heroTitle">Syndicate Management <br><span class="gradient-text">Reimagined</span></h1>
-                <p data-i18n="heroSubtitle">An all-in-one solution for your co-ownership. Professional, intuitive, and secure.</p>
+            <div class="animate-on-scroll">
+                <div class="hero-badge">
+                    <span class="badge-pulse"></span>
+                    <span data-i18n="versionBadge">Version 3.4.0 v5 Available • <span class="badge-accent">New: 24h Test Pack</span></span>
+                </div>
+                <h1 data-i18n="heroTitle">Syndicate Management <br><span class="gradient-text">Redefined</span></h1>
+                <p data-i18n="heroSubtitle">The sophisticated choice for modern co-ownerships. Professional grade tools, seamless experience.</p>
 
                 <div class="hero-actions">
                     <a href="https://www.mediafire.com/file/hw0t6iylriag798/SyndiKi_Setup_3.4.0_v._5.exe/file" class="btn btn-primary btn-lg" target="_blank">
                         <i class="fa-brands fa-windows"></i>
-                        <span data-i18n="downloadWindows">Download (Windows)</span>
+                        <span data-i18n="downloadWindows">Get Desktop App</span>
                     </a>
                     <a href="https://pro.syndiki.online" class="btn btn-secondary btn-lg" target="_blank">
                         <i class="fa-solid fa-cloud"></i>
-                        <span data-i18n="goCloud">Syndiki Pro (Web)</span>
+                        <span data-i18n="goCloud">Syndiki Cloud</span>
                     </a>
                 </div>
             </div>
 
-            <div class="showcase-visual animate-fade-in">
-                <img src="assets/dashboard_pro.png" alt="SyndiKi Dashboard" class="showcase-img">
+            <div class="hero-visual animate-on-scroll">
+                <div class="glow-bg"></div>
+                <img src="assets/dashboard_pro.png" alt="SyndiKi Dashboard Pro">
             </div>
         </section>
 
-        <!-- Product Showcase Section -->
-        <section id="showcase" class="showcase-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="showcaseTitle">Discover SyndiKi</h2>
-                    <p data-i18n="showcaseSubtitle">A powerful and intuitive interface for every task</p>
-                </div>
+        <!-- Trust Logos -->
+        <section class="container animate-on-scroll" style="text-align: center; padding-bottom: 4rem;">
+            <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 2rem; opacity: 0.6;" data-i18n="trustedBy">Trusted by Top Residential Complexes</p>
+            <div class="trust-logos">
+                <i class="fa-solid fa-building-circle-check"></i>
+                <i class="fa-solid fa-hotel"></i>
+                <i class="fa-solid fa-city"></i>
+                <i class="fa-solid fa-vihara"></i>
+                <i class="fa-solid fa-house-chimney-window"></i>
+            </div>
+        </section>
 
-                <div class="showcase-tabs" id="showcaseNav">
+        <!-- Features Bento Section -->
+        <section id="features" class="section-padding container">
+            <div class="pricing-header animate-on-scroll">
+                <h2 data-i18n="featuresTitle">The Smart Ecosystem</h2>
+                <p data-i18n="featuresSubtitle">Integrated tools for every aspect of property management</p>
+            </div>
+
+            <div class="features-bento">
+                <div class="feature-card glass large animate-on-scroll">
+                    <div class="card-content">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <h3 data-i18n="featReportsTitle">Intelligence & Analytics</h3>
+                        <p data-i18n="featReportsDesc">Advanced financial clarity with automated balance sheets and real-time cash flow monitoring.</p>
+                    </div>
+                </div>
+                <div class="feature-card glass tall animate-on-scroll">
+                    <div class="card-content">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <h3 data-i18n="featResidentsTitle">Secure Residents Portal</h3>
+                        <p data-i18n="featResidentsDesc">Comprehensive management of owners and tenants with centralized documentation.</p>
+                    </div>
+                </div>
+                <div class="feature-card glass animate-on-scroll">
+                    <div class="card-content">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <h3 data-i18n="featPaymentsTitle">Automated Billing</h3>
+                        <p data-i18n="featPaymentsDesc">One-click receipt generation and automated unpaid alerts.</p>
+                    </div>
+                </div>
+                <div class="feature-card glass animate-on-scroll">
+                    <div class="card-content">
+                        <i class="fa-solid fa-fingerprint"></i>
+                        <h3 data-i18n="featPrivacyTitle">Privacy First</h3>
+                        <p data-i18n="featPrivacyDesc">Zero-knowledge encryption for your sensitive data.</p>
+                    </div>
+                </div>
+                <div id="lead-section" class="feature-card glass large animate-on-scroll" style="background: var(--bg-card-hover);">
+                    <div class="cta-bento">
+                        <div style="flex: 1; min-width: 250px;">
+                            <h3 data-i18n="ctaTitle">Ready for the Next Level?</h3>
+                            <p data-i18n="ctaSubtitle">Join our growing ecosystem of 100+ managed properties.</p>
+                        </div>
+                        <form id="leadCaptureForm" style="display: flex; gap: 0.5rem; flex: 1; min-width: 280px; align-items: center;">
+                            <input type="text" id="leadContact" class="form-input" style="flex: 1; height: 50px; margin: 0; padding: 0 1.5rem; border-radius: 100px;" placeholder="WhatsApp or Email" required data-i18n-placeholder="leadPlaceholder">
+                            <button type="submit" class="btn btn-primary" style="height: 50px; padding: 0 1.5rem; border-radius: 100px;" title="Envoyer">
+                                <i class="fa-solid fa-paper-plane" style="margin: 0;"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Interaction (Showcase) -->
+        <section class="section-padding container">
+            <div class="pricing-header animate-on-scroll">
+                <h2 data-i18n="showcaseTitle">Precision Experience</h2>
+            </div>
+            
+            <div class="showcase-container animate-on-scroll">
+                <div class="tabs-nav" id="showcaseNav">
                     <button class="tab-btn active" data-target="dashboard" data-i18n="navDashboard">Dashboard</button>
                     <button class="tab-btn" data-target="residents" data-i18n="navResidents">Residents</button>
                     <button class="tab-btn" data-target="payments" data-i18n="navPayments">Payments</button>
@@ -130,114 +177,86 @@
                     <button class="tab-btn" data-target="receipt" data-i18n="navReceipt">Receipt</button>
                 </div>
 
-                <div class="showcase-layout">
-                    <div class="showcase-visual glass-card">
-                        <img src="assets/dashboard_pro.png" id="showcaseImg" alt="Showcase">
+                <div class="showcase-content glass">
+                    <div class="showcase-img-wrap">
+                        <img src="assets/dashboard_pro.png" id="showcaseImg" alt="SyndiKi Interface">
                     </div>
-                    <div class="showcase-info">
-                        <h3 id="showcaseTitleText" data-i18n="showcaseDashboardTitle">Comprehensive Dashboard</h3>
-                        <p id="showcaseDescText" data-i18n="showcaseDashboardDesc">Get a 360° view of your building's health. Monitor collections, expenses, and pending tasks in one glance.</p>
+                    <div class="showcase-text">
+                        <h3 id="showcaseTitleText" data-i18n="showcaseDashboardTitle">Dashboard</h3>
+                        <p id="showcaseDescText" data-i18n="showcaseDashboardDesc">Vue d'ensemble.</p>
                         <ul class="feature-list" id="showcaseList">
-                            <li data-i18n="showcaseDashFeat1"><i class="fa-solid fa-check"></i> Real-time statistics</li>
-                            <li data-i18n="showcaseDashFeat2"><i class="fa-solid fa-check"></i> Financial summary</li>
-                            <li data-i18n="showcaseDashFeat3"><i class="fa-solid fa-check"></i> Unpaid alerts</li>
+                            <!-- Injected by script -->
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section id="features" class="section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="featuresTitle">Key Features</h2>
-                    <p data-i18n="featuresSubtitle">Everything you need for healthy management</p>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-card glass-card">
-                        <i class="fa-solid fa-users"></i>
-                        <h3 data-i18n="featResidentsTitle">Residents Management</h3>
-                        <p data-i18n="featResidentsDesc">Track owners and tenants easily. Detailed profiles and history for every apartment.</p>
-                    </div>
-
-                    <div class="feature-card glass-card">
-                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                        <h3 data-i18n="featPaymentsTitle">Payment Tracking</h3>
-                        <p data-i18n="featPaymentsDesc">Record fees, generate automated receipts, and follow up on overdue payments in real-time.</p>
-                    </div>
-
-                    <div class="feature-card glass-card">
-                        <i class="fa-solid fa-chart-pie"></i>
-                        <h3 data-i18n="featReportsTitle">Financial Reports</h3>
-                        <p data-i18n="featReportsDesc">Clear dashboards to visualize income, expenses, and cash balance in one click.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trust Section -->
-        <section class="trust container">
-            <div class="trust-content glass-card">
-                <div class="stat">
-                    <div class="stat-number">+100</div>
+        <!-- Dynamic Impact Stats -->
+        <section class="section-padding container">
+            <div class="stat-grid animate-on-scroll">
+                <div class="stat-item">
+                    <div class="stat-val">+100</div>
                     <div class="stat-label" data-i18n="statBuildings">Buildings Managed</div>
                 </div>
-                <div class="divider"></div>
-                <div class="stat">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label" data-i18n="statOffline">Offline & Secure</div>
+                <div class="stat-item">
+                    <div class="stat-val">100%</div>
+                    <div class="stat-label" data-i18n="statOffline">Offline Freedom</div>
                 </div>
-                <div class="divider"></div>
-                <div class="stat">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label" data-i18n="statSupport">Dedicated Support</div>
+                <div class="stat-item">
+                    <div class="stat-val">24/7</div>
+                    <div class="stat-label" data-i18n="statSupport">VIP Assistance</div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing Section -->
-        <section id="pricing" class="pricing-section section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="pricingTitle">Simple & Transparent Pricing</h2>
-                    <p data-i18n="pricingSubtitle">Choose the plan that fits your needs</p>
-                </div>
-
+        <!-- Pricing -->
+        <section id="pricing" class="section-padding container">
+            <div class="pricing-header animate-on-scroll">
+                <h2 data-i18n="pricingTitle">Investment Tiers</h2>
                 <div class="pricing-tabs">
-                    <button class="pricing-tab-btn active" id="tabDesktop">
-                        <i class="fa-brands fa-windows"></i> SyndiKi Desktop
-                    </button>
-                    <button class="pricing-tab-btn" id="tabCloud">
-                        <i class="fa-solid fa-cloud"></i> SyndiKi Cloud
-                    </button>
+                    <button class="tab-btn active" id="tabDesktop" data-i18n="tabDesktop">SyndiKi Desktop</button>
+                    <button class="tab-btn" id="tabCloud" data-i18n="tabCloud">SyndiKi Cloud</button>
                 </div>
+            </div>
 
-                <div class="pricing-grid" id="pricingGrid">
-                    <!-- Pricing cards will be injected or toggled by script.js -->
-                </div>
+            <div class="pricing-grid" id="pricingGrid">
+                <!-- Injected by script -->
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section class="section-padding">
-            <div class="container">
-                <div class="section-header">
-                    <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+        <section class="section-padding container">
+            <div class="pricing-header animate-on-scroll">
+                <h2 data-i18n="faqTitle">Common Questions</h2>
+            </div>
+            
+            <div class="faq-container animate-on-scroll">
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span data-i18n="faq1Q">Does it work without internet?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p data-i18n="faq1A">Exactly! Our Desktop version is truly offline, ensuring your data never leaves your computer.</p>
+                    </div>
                 </div>
-                <div class="faq-grid">
-                    <div class="faq-item glass-card">
-                        <h3 data-i18n="faq1Q">Does the software work without internet?</h3>
-                        <p data-i18n="faq1A">Yes! SyndiKi Desktop is a standalone application that works perfectly offline. Your data stays on your computer.</p>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span data-i18n="faq2Q">Is it for volunteers?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="faq-item glass-card">
-                        <h3 data-i18n="faq2Q">Is it suitable for volunteer syndics?</h3>
-                        <p data-i18n="faq2A">Absolutely. We designed the interface to be simple and intuitive, requiring no accounting skills.</p>
+                    <div class="faq-content">
+                        <p data-i18n="faq2A">Yes, specially built for volunteer syndics. No accounting degree required.</p>
                     </div>
-                    <div class="faq-item glass-card">
-                        <h3 data-i18n="faq3Q">Can I manage multiple buildings?</h3>
-                        <p data-i18n="faq3A">Yes, SyndiKi allows you to manage multiple residences or blocks within the same interface.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-header">
+                        <span data-i18n="faq3Q">Multi-building support?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <p data-i18n="faq3A">Manage an entire portfolio from a single dashboard. Perfect for management firms too.</p>
                     </div>
                 </div>
             </div>
@@ -245,89 +264,81 @@
 
         <!-- Contact Section -->
         <section id="contact" class="section-padding container">
-            <div class="contact-section">
-                <div class="contact-visual">
-                    <div>
-                        <h2 data-i18n="contactTitle">Get in Touch</h2>
-                        <p data-i18n="contactSubtitle">Have a question? Need a demo? We're here to help.</p>
-                    </div>
+            <div class="contact-grid">
+                <div class="contact-info glass animate-on-scroll">
+                    <h2 data-i18n="contactTitle">Connect with Us</h2>
+                    <p data-i18n="contactSubtitle">Our experts are ready to assist you personally.</p>
                     
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fa-solid fa-phone"></i>
-                            <a href="tel:+212755837268" class="phone-num">07 55 83 72 68</a>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone-volume"></i>
+                        <div>
+                            <strong data-i18n="contactDirect">Direct Support</strong>
+                            <p class="phone-num">07 55 83 72 68</p>
                         </div>
-                        <div class="contact-method">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <a href="https://wa.me/212755837268" target="_blank" class="phone-num">WhatsApp Direct</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <div>
+                            <strong data-i18n="contactEmail">Email Inquiries</strong>
+                            <p>info@syndiki.online</p>
                         </div>
-                        <div class="contact-method">
-                            <i class="fa-solid fa-envelope"></i>
-                            <a href="mailto:contact@syndiki.online">contact@syndiki.online</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            <strong data-i18n="contactWhatsapp">Concierge WhatsApp</strong>
+                            <p class="phone-num">+212 755 837 268</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-form-container glass-card" style="padding: 60px;">
+                <div class="contact-form glass animate-on-scroll">
                     <form id="contactForm">
-                        <input type="text" class="form-input" id="contactName" placeholder="Full Name" required data-i18n-placeholder="formName">
-                        <input type="tel" class="form-input" id="contactPhone" placeholder="Phone Number" required data-i18n-placeholder="formPhone">
-                        <textarea class="form-input" id="contactMessage" placeholder="Your Message" rows="5" required data-i18n-placeholder="formMessage"></textarea>
-                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-i18n="formSend">Send Message</button>
+                        <div class="form-group">
+                            <input type="text" class="form-input" id="contactName" placeholder="Full Name" required data-i18n-placeholder="formName">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-input" id="contactPhone" placeholder="Phone Number" required data-i18n-placeholder="formPhone">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-input" id="contactMessage" placeholder="How can we help?" rows="5" required data-i18n-placeholder="formMessage"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; height: 60px; font-size: 1.1rem;">
+                            <span data-i18n="formSend">Send Message</span>
+                        </button>
                     </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Download CTA -->
-        <section id="download" class="section-padding">
-            <div class="container">
-                <div class="glass-card" style="padding: 80px 40px; text-align: center; background: linear-gradient(135deg, var(--primary), var(--primary-alt)); color: white;">
-                    <h2 data-i18n="ctaTitle" style="color: white; margin-bottom: 20px;">Ready to simplify your management?</h2>
-                    <p data-i18n="ctaSubtitle" style="color: rgba(255,255,255,0.9); margin-bottom: 40px; font-size: 1.2rem;">Download SyndiKi now and take control of your building.</p>
-                    <a href="https://www.mediafire.com/file/hw0t6iylriag798/SyndiKi_Setup_3.4.0_v._5.exe/file" class="btn btn-secondary btn-lg">
-                        <i class="fa-brands fa-windows"></i>
-                        <span data-i18n="downloadWindows">Download for Windows</span>
-                    </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="container">
-        <div class="footer-nav">
-            <div class="logo">
-                <img src="assets/logo_transparent.png" alt="SyndiKi Logo">
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="logo">
+                    <img src="assets/logo_transparent.png" alt="Logo">
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/syndikiapp" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/syndikiapp" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/212755837268" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 SyndiKi Manager. <span data-i18n="copyright">All rights reserved.</span></p>
-            <div class="footer-links">
-                <a href="#" data-i18n="footerPrivacy">Privacy Policy</a>
-                <a href="#" data-i18n="footerTerms">Terms of Service</a>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SyndiKi Manager. <span data-i18n="copyright">All rights reserved.</span></p>
+                <div class="legal-links">
+                    <a href="privacy.html" data-i18n="footerPrivacy">Privacy Policy</a>
+                    <a href="terms.html" data-i18n="footerTerms">Terms of Use</a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/212755837268" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/212755837268" class="wa-float" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <script src="script.js"></script>
-    <script>
-        // Simple scroll header effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
-    </script>
 </body>
 
 </html>

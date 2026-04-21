@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>SyndiKi - Checkout</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWNS5F02GN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TWNS5F02GN');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .checkout-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 1.5rem;
+        }
+        .checkout-card {
+            width: 100%;
+            max-width: 650px;
+            padding: 3rem;
+            animation: formEntry 0.6s cubic-bezier(0.175, 0.885, 0.32, 1);
+        }
+        @keyframes formEntry {
+            from { opacity: 0; transform: translateY(30px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .checkout-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .checkout-card p {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media (max-width: 600px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .checkout-card { padding: 2rem; }
+        }
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: var(--radius-lg);
+            flex: 1;
+            transition: var(--transition-smooth);
+        }
+        .radio-label:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .radio-label input[type="radio"] {
+            accent-color: var(--primary);
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+        .radio-label span {
+            font-weight: 600;
+            color: var(--text-white);
+        }
+        .radio-label:has(input:checked) {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: var(--primary);
+        }
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        .back-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+        [dir="rtl"] .back-link { left: auto; right: 2rem; }
+        [dir="rtl"] .back-link:hover { transform: translateX(5px); }
+        [dir="rtl"] .back-link i { transform: rotate(180deg); }
+        .checkout-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .checkout-logo img {
+            height: 48px;
+            mix-blend-mode: screen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-mesh"></div>
+
+    <main class="checkout-page">
+        <a href="index.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span data-i18n="backHome">Retour</span>
+        </a>
+
+        <div class="checkout-card glass">
+            <div class="checkout-logo">
+                <img src="assets/logo_transparent.png" alt="SyndiKi">
+            </div>
+            <h2 data-i18n="checkoutTitle">Finalisez votre demande</h2>
+            <p data-i18n="checkoutSubtitle">Remplissez ce formulaire pour nous permettre de mieux vous accompagner.</p>
+
+            <form id="checkoutForm">
+                <div class="form-grid" style="margin-bottom: 1.5rem;">
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <input type="text" class="form-input" id="cartName" required data-i18n-placeholder="formName" placeholder="Nom Complet">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <input type="tel" class="form-input" id="cartPhone" required data-i18n-placeholder="formPhone" placeholder="Téléphone">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <input type="email" class="form-input" id="cartEmail" required data-i18n-placeholder="formEmail" placeholder="Email">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <input type="text" class="form-input" id="cartCity" required data-i18n-placeholder="formCity" placeholder="Ville">
+                    </div>
+                    <div class="form-group" style="grid-column: 1 / -1; margin-bottom: 0;">
+                        <input type="text" class="form-input" id="cartBuilding" required data-i18n-placeholder="formBuilding" placeholder="Nom de la Résidence">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 0.75rem; color: var(--text-dim);" data-i18n="orderType">Type de demande</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="cartType" value="callback" checked>
+                            <span data-i18n="typeCall">Être rappelé</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="cartType" value="order">
+                            <span data-i18n="typeOrder">Passer commande</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%; height: 60px; font-size: 1.15rem; margin-top: 1rem;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.3rem;"></i>
+                    <span data-i18n="checkoutSubmit">Continuer vers WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Custom translations config specifically for checkout
+        translations.fr.backHome = "Retour au site";
+        translations.ar.backHome = "العودة للموقع";
+
+        document.getElementById('checkoutForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const params = new URLSearchParams(window.location.search);
+            const plan = params.get('plan') || 'Aucun plan spécifique';
+
+            const name = document.getElementById('cartName').value;
+            const phone = document.getElementById('cartPhone').value;
+            const email = document.getElementById('cartEmail').value;
+            const city = document.getElementById('cartCity').value;
+            const building = document.getElementById('cartBuilding').value;
+            
+            const typeValue = document.querySelector('input[name="cartType"]:checked').value;
+            const lang = localStorage.getItem('syndiki_lang') || 'fr';
+            let typeLabel = "";
+            let message = "";
+
+            if (lang === 'ar') {
+                typeLabel = typeValue === 'callback' ? "طلب اتصال من خبير" : "الطلب و التأكيد المباشر";
+                message = `مرحباً SyndiKi!\n\nلدي طلب جديد:\n\n*النوع:* ${typeLabel}\n*الباقة المطلوبة:* ${plan}\n\n*المعلومات:*\n- الاسم: ${name}\n- الهاتف: ${phone}\n- الإيميل: ${email}\n- العمارة/الإقامة: ${building}\n- المدينة: ${city}`;
+            } else {
+                typeLabel = typeValue === 'callback' ? "Demande de Rappel téléphonique" : "Passage de Commande";
+                message = `Bonjour SyndiKi !\n\nJ'ai une nouvelle demande :\n\n*Type de demande :* ${typeLabel}\n*Offre ciblée :* ${plan}\n\n*Mes informations :*\n- Nom : ${name}\n- Téléphone : ${phone}\n- Email : ${email}\n- Résidence : ${building}\n- Ville : ${city}`;
+            }
+
+            window.open(`https://wa.me/212755837268?text=${encodeURIComponent(message)}`, '_blank');
+        });
+    </script>
+</body>
+
+</html>
