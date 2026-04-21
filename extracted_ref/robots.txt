@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://syndiki.online/sitemap.xml

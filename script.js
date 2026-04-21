@@ -2,58 +2,79 @@ const translations = {
     fr: {
         navPricing: "Tarifs",
         pageTitle: "SyndiKi - Gestion de Syndic Simplifiée au Maroc",
-
-        // SEO Enhanced Text
-        whyTitle: "Pourquoi choisir SyndiKi pour votre copropriété ?",
-        whyText1: "Gérer une copropriété au Maroc peut être un défi complexe. Entre la collecte des cotisations, le suivi des dépenses d'entretien, et la communication avec les résidents, les syndics bénévoles et professionnels se retrouvent souvent débordés.",
-        whyText2: "<strong>SyndiKi</strong> a été conçu spécifiquement pour répondre aux besoins du marché marocain. Notre logiciel simplifie chaque aspect de la gestion immobilière. Fini les fichiers Excel complexes et les reçus papier perdus. Avec SyndiKi, vous centralisez tout : historique des paiements, état de la trésorerie, et fiche technique de chaque appartement.",
-        whyText3: "En choisissant notre solution, vous optez pour la transparence. Les rapports financiers clairs instaurent la confiance entre le syndic et les copropriétaires, garantissant ainsi une meilleure ambiance au sein de votre immeuble et un meilleur taux de recouvrement des frais de syndic.",
-
-        faqTitle: "Questions Fréquentes",
-        faq1Q: "Le logiciel fonctionne-t-il sans internet ?",
-        faq1A: "Oui ! SyndiKi est une application de bureau qui fonctionne parfaitement hors ligne. Vos données sont stockées localement sur votre ordinateur pour une sécurité maximale et un accès garanti même sans connexion.",
-        faq2Q: "Est-ce adapté aux syndics bénévoles ?",
-        faq2A: "Absolument. Nous avons simplifié l'interface pour qu'aucune compétence comptable ne soit nécessaire. C'est l'outil idéal pour les syndics de copropriété bénévoles qui veulent une gestion professionnelle sans la complexité.",
-        faq3Q: "Puis-je gérer plusieurs immeubles ?",
-        faq3A: "Oui, la version complète de SyndiKi permet de gérer plusieurs résidences ou blocs d'appartements au sein de la même interface simple et intuitive.",
-
         downloadBtn: "Télécharger",
-        versionBadge: "Version 3.4.0 v5 Disponible • <span style='color: #fbbf24; font-weight: bold;'>Nouveau: Pack Test 24h</span>",
+        versionBadge: "Version 3.4.0 v5 Disponible • <span class='badge-accent'>Nouveau: Pack Test 24h</span>",
         heroTitle: "La Gestion de Syndic <br><span class='gradient-text'>Réinventée</span>",
-        heroSubtitle: "Une solution tout-en-un pour gérer votre copropriété au Maroc. Simple, transparent et puissant.",
-        downloadWindows: "Télécharger pour Windows",
-        learnMore: "Découvrir",
+        heroSubtitle: "Une solution tout-en-un pour votre copropriété. Professionnelle, intuitive et sécurisée.",
+        downloadWindows: "Télécharger (Windows)",
+        goCloud: "Syndiki Pro (Web)",
 
-        tutoTitle: "Comment ça marche ?",
-        tutoSubtitle: "Découvrez SyndiKi en action",
-        tuto1Title: "Ajouter un Résident",
-        tuto1Desc: "En quelques clics, enregistrez un nouveau copropriétaire ou locataire avec toutes ses coordonnées.",
-        tuto2Title: "Gérer les Paiements",
-        tuto2Desc: "Suivez qui a payé et qui est en retard avec des indicateurs clairs. Générez des reçus instantanément.",
-        tuto3Title: "Dashboard Financier",
-        tuto3Desc: "Une vue d'ensemble sur la santé financière. Suivez les recettes et dépenses en temps réel.",
+        // Showcase
+        showcaseTitle: "Découvrez SyndiKi",
+        showcaseSubtitle: "Une interface puissante et intuitive pour chaque tâche",
+        navDashboard: "Dashboard",
+        navResidents: "Résidents",
+        navPayments: "Paiements",
+        navExpenses: "Dépenses",
+        navReports: "Rapports",
+        navReceipt: "Reçus",
 
-        testiTitle: "Ils nous font confiance",
-        testiSubtitle: "Découvrez les avis de nos utilisateurs au Maroc et en France",
-        testi1Text: '"Enfin un logiciel adapté à la réalité marocaine. La gestion des cotisations est devenue un jeu d\'enfant."',
-        testi2Text: '"Je gère une petite copropriété à Paris et Syndiki est parfait. Simple, pas cher et efficace."',
-        testi3Text: '"Le support technique est très réactif. J\'ai pu configurer mon immeuble en moins d\'une heure."',
+        showcaseDashboardTitle: "Tableau de Bord Complet",
+        showcaseDashboardDesc: "Obtenez une vue à 360° sur la santé de votre immeuble. Suivez les recouvrements, les dépenses et les tâches en attente.",
+        showcaseDashFeat1: "Statistiques en temps réel",
+        showcaseDashFeat2: "Récapitulatif financier",
+        showcaseDashFeat3: "Alertes d'impayés",
 
-        featuresTitle: "Fonctionnalités Principales",
-        featuresSubtitle: "Tout ce dont vous avez besoin pour une gestion saine et transparente",
+        showcaseResidentsTitle: "Gestion des Résidents",
+        showcaseResidentsDesc: "Gérez facilement la liste des copropriétaires et locataires. Suivez les soldes et l'historique par appartement.",
+        showcaseResFeat1: "Base de données sécurisée",
+        showcaseResFeat2: "Suivi des soldes individuels",
+        showcaseResFeat3: "Recherche instantanée",
+
+        showcasePaymentsTitle: "Suivi des Paiements",
+        showcasePaymentsDesc: "Enregistrez les cotisations et suivez les flux de trésorerie avec précision. Générez des reçus en un clic.",
+        showcasePayFeat1: "Historique des transactions",
+        showcasePayFeat2: "Plusieurs méthodes de paiement",
+        showcasePayFeat3: "Génération automatique de reçus",
+
+        showcaseExpensesTitle: "Contrôle des Dépenses",
+        showcaseExpensesDesc: "Suivez chaque centime dépensé pour l'entretien et les services. Gardez un contrôle total sur votre budget.",
+        showcaseExpFeat1: "Catégorisation des frais",
+        showcaseExpFeat2: "Suivi des fournisseurs",
+        showcaseExpFeat3: "Justificatifs numériques",
+
+        showcaseReportsTitle: "États & Rapports",
+        showcaseReportsDesc: "Générez des rapports financiers clairs pour les assemblées générales et la transparence totale.",
+        showcaseRepFeat1: "Exports Excel & PDF",
+        showcaseRepFeat2: "Bilan annuel automatique",
+        showcaseRepFeat3: "Journal des opérations",
+
+        showcaseReceiptTitle: "Reçus Professionnels",
+        showcaseReceiptDesc: "Remettez des documents officiels et clairs à vos résidents. Améliorez la confiance et le professionnalisme.",
+        showcaseRecFeat1: "Génération instantanée",
+        showcaseRecFeat2: "Mise en page élégante",
+        showcaseRecFeat3: "Historique archivé",
+
+        // Features
+        featuresTitle: "Fonctionnalités Clés",
+        featuresSubtitle: "Tout ce dont vous avez besoin pour une gestion saine",
         featResidentsTitle: "Gestion des Résidents",
-        featResidentsDesc: "Suivez les propriétaires et locataires par appartement. Gardez un historique complet des occupants.",
+        featResidentsDesc: "Suivez les propriétaires et locataires facilement. Profils détaillés et historique pour chaque appartement.",
         featPaymentsTitle: "Suivi des Paiements",
-        featPaymentsDesc: "Enregistrez les cotisations mensuelles, générez des reçus PDF et relancez les impayés facilement.",
+        featPaymentsDesc: "Enregistrez les frais, générez des reçus automatisés et suivez les impayés en temps réel.",
         featReportsTitle: "Rapports Financiers",
-        featReportsDesc: "Des tableaux de bord clairs pour visualiser les revenus, les dépenses et le solde exact de la caisse.",
-        featPrintTitle: "Impression & Export",
-        featPrintDesc: "Exportez vos données comptables en Excel ou imprimez les fiches résidents en un clic.",
+        featReportsDesc: "Tableaux de bord clairs pour visualiser revenus, dépenses et solde en un clic.",
 
-        pricingTitle: "Tarifs Simplifiés",
-        pricingSubtitle: "Choisissez l'offre qui correspond à vos besoins",
+        // Stats
+        statBuildings: "Immeubles Gérés",
+        statOffline: "Hors Ligne & Sécurisé",
+        statSupport: "Support Dédié",
+
+        // Pricing
+        pricingTitle: "Tarifs Simples & Transparents",
+        pricingSubtitle: "Choisissez le plan qui vous convient",
         planTrial: "Test Express",
-        period24h: "24 Heures (Gratuit)",
+        period24h: "24 Heures",
         plan7Days: "Pack Semaine",
         period7Days: "7 Jours",
         planMonthly: "Mensuel",
@@ -66,101 +87,119 @@ const translations = {
         period2Years: "/ 2 Ans",
         planLifetime: "À Vie",
         periodLife: "Paiement unique",
-        contactForPrice: "Nous contacter",
-
-        featAllAccess: "Accès Complet",
-        featUpdates: "Mises à jour incluses",
-        featSupport: "Support WhatsApp",
-        featSupportVIP: "Support Prioritaire",
-        featNoCommit: "Sans Engagement",
-        btnStartTrial: "Tester 24h",
+        tagPopular: "Populaire",
         btnSubscribe: "S'abonner",
         btnBuyNow: "Acheter Maintenant",
         btnContactUs: "Contact",
 
+        // FAQ
+        faqTitle: "Questions Fréquentes",
+        faq1Q: "Le logiciel fonctionne-t-il sans internet ?",
+        faq1A: "Oui ! SyndiKi Desktop est une application autonome qui fonctionne parfaitement hors ligne. Vos données restent sur votre ordinateur.",
+        faq2Q: "Est-ce adapté aux syndics bénévoles ?",
+        faq2A: "Absolument. Nous avons conçu l'interface pour qu'elle soit simple et intuitive, ne nécessitant aucune compétence comptable.",
+        faq3Q: "Puis-je gérer plusieurs immeubles ?",
+        faq3A: "Oui, SyndiKi vous permet de gérer plusieurs résidences ou blocs au sein de la même interface.",
+
+        // Contact
         contactTitle: "Contactez-nous",
-        contactSubtitle: "Une question ? Besoin d'une démo (version Web) ?",
+        contactSubtitle: "Une question ? Besoin d'une démo ? Nous sommes là pour vous aider.",
         formName: "Nom Complet",
         formPhone: "Téléphone",
         formMessage: "Message",
         formSend: "Envoyer",
 
-        // Demo Section
-        demoTitle: "Obtenir une Démo",
-        demoSubtitle: "Testez SyndiKi gratuitement dès maintenant.",
-        demoBuilding: "Nom de l'Immeuble / Résidence",
-        demoContactType: "Moyen de Contact",
-        demoContactValue: "Numéro / Email",
-        demoSubmit: "Obtenir les liens",
-        demoSuccessTitle: "C'est parti !",
-        demoSuccessDesc: "Voici vos liens d'accès. Vos identifiants de connexion vous seront envoyés sur votre contact.",
-        demoLinkOffline: "Télécharger (Offline)",
-        demoLinkOnline: "Accéder à la version Cloud",
-        demoCheckContact: "Vérifiez votre WhatsApp/Email pour vos accès.",
-
-        statBuildings: "Immeubles Gérés",
-        statOffline: "Hors Ligne & Sécurisé",
-        statSupport: "Support Dédié",
+        // CTA
         ctaTitle: "Prêt à simplifier votre gestion ?",
-        ctaSubtitle: "Téléchargez SyndiKi maintenant et prenez le contrôle.",
-        versionInfo: "v3.4.0 v5 • 64-bit",
-        copyright: "Tous droits réservés."
+        ctaSubtitle: "Téléchargez SyndiKi maintenant et prenez le contrôle de votre immeuble.",
+        downloadWindows: "Télécharger pour Windows",
+        copyright: "Tous droits réservés.",
+        footerPrivacy: "Politique de Confidentialité",
+        footerTerms: "Conditions d'Utilisation",
+
+        // Add missing features
+        featAllAccess: "Accès Complet",
+        featUpdates: "Mises à jour incluses",
+        featSupport: "Support WhatsApp",
+        featSupportVIP: "Support Prioritaire",
+        featNoCommit: "Sans Engagement"
     },
     ar: {
         navPricing: "الأسعار",
-        pageTitle: "SyndiKi - أفضل برنامج لإدارة السنديك في المغرب",
-
-        // SEO Enhanced Text
-        whyTitle: "لماذا تختار SyndiKi لإدارة إقامتك ؟",
-        whyText1: "إدارة الملكية المشتركة في المغرب قد تكون تحدياً معقداً. بين جمع المساهمات، متابعة مصاريف الصيانة، والتواصل مع السكان، يجد السنديك نفسه غالباً غارقاً في الأوراق.",
-        whyText2: "<strong>SyndiKi</strong> صمم خصيصاً ليلبي حاجيات السنديك المغربي. برنامجنا يبسط كل جوانب التسيير العقاري. وداعاً لملفات إكسيل المعقدة وضياع الإيصالات الورقية. مع SyndiKi، كل شيء مجمع في مكان واحد: سجل الدفعات، حالة الصندوق، والملف التقني لكل شقة.",
-        whyText3: "باختيارك حلنا، أنت تختار الشفافية. التقارير المالية الواضحة تبني الثقة بين السنديك والملاك المشتركين، مما يضمن أجواءً أفضل في العمارة ونسبة تحصيل أعلى لواجبات السنديك.",
-
-        faqTitle: "أسئلة شائعة",
-        faq1Q: "هل يعمل البرنامج بدون إنترنت ؟",
-        faq1A: "نعم ! SyndiKi هو تطبيق سطح مكتب يعمل بشكل ممتاز دون الحاجة لاتصال بالإنترنت. بياناتكم مخزنة محلياً على حاسوبكم لضمان أقصى درجات الأمان والخصوصية.",
-        faq2Q: "هل هو مناسب للسنديك المتطوع (Bénévole) ؟",
-        faq2A: "بالتأكيد. لقد قمنا بتبسيط الواجهة لكي لا تتطلب أي مهارات محاسبية. إنها الأداة المثالية لسنديك الإقامة المتطوع الذي يريد، تسييراً احترافياً دون تعقيدات.",
-        faq3Q: "هل يمكنني إدارة عدة عمارات ؟",
-        faq3A: "نعم، النسخة الكاملة من SyndiKi تمكنك من إدارة عدة إقامات أو مجمعات سكنية في نفس الواجهة السهلة.",
-
+        pageTitle: "SyndiKi - إدارة سنديك بمفهوم جديد",
         downloadBtn: "تحميل",
-        versionBadge: "الإصدار 3.4.0 v5 متوفر الآن • <span style='color: #fbbf24; font-weight: bold;'>جديد: باقة تجريبية 24 ساعة</span>",
-        heroTitle: "إدارة السنديك <br><span class='gradient-text'>بمفهوم جديد</span>",
-        heroSubtitle: "الحل الشامل لإدارة الملكية المشتركة في المغرب. بسيط، شفاف وقوي.",
-        downloadWindows: "تحميل لنظام الويندوز",
-        learnMore: "اكتشف المزيد",
+        versionBadge: "الإصدار 3.4.0 متوفر • <span class='badge-accent'>جديد: باقة تجريبية 24 ساعة</span>",
+        heroTitle: "تسيير السنديك <br><span class='gradient-text'>بمفهوم جديد</span>",
+        heroSubtitle: "الحل الشامل لإدارة ملكيتك المشتركة. احترافي، بديهي وآمن.",
+        downloadWindows: "تحميل (ويندوز)",
+        goCloud: "Syndiki Pro (ويب)",
 
-        tutoTitle: "كيف يعمل ؟",
-        tutoSubtitle: "اكتشف SyndiKi في العمل",
-        tuto1Title: "إضافة ساكن",
-        tuto1Desc: "سجل مالكًا أو مكترًا جديدًا مع كافة المعلومات في بضع نقرات.",
-        tuto2Title: "إدارة الدفعات",
-        tuto2Desc: "تتبع من دفع ومن تأخر بمؤشرات واضحة. أنشئ إيصالات الدفع فورياً.",
-        tuto3Title: "لوحة القيادة المالية",
-        tuto3Desc: "نظرة شاملة على الصحة المالية للمبنى. تتبع المداخيل والمصاريف بشكل آني.",
+        // Showcase
+        showcaseTitle: "اكتشف SyndiKi",
+        showcaseSubtitle: "واجهة قوية وبديهية لكل مهمة",
+        navDashboard: "لوحة التحكم",
+        navResidents: "السكان",
+        navPayments: "الأداءات",
+        navExpenses: "المصاريف",
+        navReports: "التقارير",
+        navReceipt: "الإيصالات",
 
-        testiTitle: "هم يثقون بنا",
-        testiSubtitle: "اكتشف آراء مستخدمينا في المغرب وفرنسا",
-        testi1Text: '"أخيراً برنامج يناسب الواقع المغربي. إدارة المساهمات أصبحت لعبة أطفال."',
-        testi2Text: '"أدير ملكية مشتركة صغيرة في باريس و Syndiki مثالي. بسيط، رخيص وفعال."',
-        testi3Text: '"الدعم الفني سريع جداً. تمكنت من إعداد عمارتي في أقل من ساعة."',
+        showcaseDashboardTitle: "لوحة تحكم شاملة",
+        showcaseDashboardDesc: "احصل على رؤية 360 درجة لصحة مبناك. تتبع التحصيلات والمصاريف والمهام المعلقة في لمح البصر.",
+        showcaseDashFeat1: "إحصائيات فورية",
+        showcaseDashFeat2: "ملخص مالي",
+        showcaseDashFeat3: "تنبيهات المتأخرات",
 
+        showcaseResidentsTitle: "إدارة السكان",
+        showcaseResidentsDesc: "إدارة قائمة الملاك والمكترين بسهولة. تتبع الأرصدة والسجل حسب كل شقة.",
+        showcaseResFeat1: "قاعدة بيانات آمنة",
+        showcaseResFeat2: "تتبع أرصدة الشقق",
+        showcaseResFeat3: "بحث فوري",
+
+        showcasePaymentsTitle: "تتبع المدفوعات",
+        showcasePaymentsDesc: "سجل المساهمات وتتبع التدفقات النقدية بدقة. أنشئ إيصالات الأداء بنقرة واحدة.",
+        showcasePayFeat1: "سجل المعاملات",
+        showcasePayFeat2: "طرق دفع متعددة",
+        showcasePayFeat3: "توليد تلقائي للإيصالات",
+
+        showcaseExpensesTitle: "التحكم في المصاريف",
+        showcaseExpensesDesc: "تتبع كل سنتيم يتم صرفه على الصيانة والخدمات. حافظ على تحكم كامل في ميزانيتك.",
+        showcaseExpFeat1: "تصنيف المصاريف",
+        showcaseExpFeat2: "تتبع الموردين",
+        showcaseExpFeat3: "إثباتات دفع رقمية",
+
+        showcaseReportsTitle: "التقارير والكشوفات",
+        showcaseReportsDesc: "أنشئ تقارير مالية واضحة للجموع العامة ولضمان الشفافية التامة.",
+        showcaseRepFeat1: "تصدير Excel و PDF",
+        showcaseRepFeat2: "حصيلة سنوية تلقائية",
+        showcaseRepFeat3: "سجل العمليات",
+
+        showcaseReceiptTitle: "إيصالات احترافية",
+        showcaseReceiptDesc: "قدم وثائق رسمية وواضحة للسكان. عزز الثقة والاحترافية في التعامل.",
+        showcaseRecFeat1: "توليد فوري",
+        showcaseRecFeat2: "تنسيق أنيق",
+        showcaseRecFeat3: "سجل مؤرشف",
+
+        // Features
         featuresTitle: "المميزات الرئيسية",
-        featuresSubtitle: "كل ما تحتاجه لإدارة سليمة وشفافة",
+        featuresSubtitle: "كل ما تحتاجه لإدارة سليمة",
         featResidentsTitle: "إدارة السكان",
-        featResidentsDesc: "تتبع الملاك والمكترين لكل شقة. حافظ على سجل كامل للقاطنين.",
+        featResidentsDesc: "تتبع الملاك والمكترين بسهولة. ملفات مفصلة وسجل لكل شقة.",
         featPaymentsTitle: "متابعة الدفعات",
-        featPaymentsDesc: "تسجيل المساهمات الشهرية، إنشاء الإيصالات PDF ومتابعة المتأخرات بسهولة.",
+        featPaymentsDesc: "سجل الواجبات، أنشئ إيصالات تلقائية وتابع المتأخرات في الوقت الفعلي.",
         featReportsTitle: "التقارير المالية",
-        featReportsDesc: "لوحات تحكم واضحة لمعاينة المداخيل والمصاريف والرصيد الدقيق للصندوق.",
-        featPrintTitle: "طباعة وتصدير",
-        featPrintDesc: "تصدير البيانات المحاسبية إلى Excel أو طباعة بطاقات السكان بنقرة واحدة.",
+        featReportsDesc: "لوحات تحكم واضحة لمعاينة المداخيل والمصاريف والرصيد بنقرة واحدة.",
 
-        pricingTitle: "أسعار بسيطة وواضحة",
-        pricingSubtitle: "اختر العرض المناسب لمبناك",
+        // Stats
+        statBuildings: "عمارة مسيرة",
+        statOffline: "آمن ودون أنترنت",
+        statSupport: "دعم فني مخصص",
+
+        // Pricing
+        pricingTitle: "أسعار بسيطة وشفافة",
+        pricingSubtitle: "اختر العرض المناسب لك",
         planTrial: "تجربة سريعة",
-        period24h: "24 ساعة (مجاناً)",
+        period24h: "24 ساعة",
         plan7Days: "باقة الأسبوع",
         period7Days: "7 أيام",
         planMonthly: "شهري",
@@ -173,195 +212,213 @@ const translations = {
         period2Years: "/ سنتين",
         planLifetime: "مدى الحياة",
         periodLife: "دفعة واحدة",
-        contactForPrice: "اتصل بنا",
-
-        featAllAccess: "وصول كامل",
-        featUpdates: "تحديثات متضمنة",
-        featSupport: "دعم عبر واتساب",
-        featSupportVIP: "دعم فني فائق",
-        featNoCommit: "بدون التزام",
-        btnStartTrial: "جرب 24 ساعة",
+        tagPopular: "الأكثر طلباً",
         btnSubscribe: "اشتراك",
         btnBuyNow: "شراء الآن",
         btnContactUs: "اتصال",
 
-        contactTitle: "Contactez-nous",
-        contactSubtitle: "Une question ? Besoin d'une démo (version Web) ?",
-        formName: "Nom Complet",
-        formPhone: "Téléphone",
-        formMessage: "Message",
-        formSend: "Envoyer",
+        // FAQ
+        faqTitle: "الأسئلة الشائعة",
+        faq1Q: "هل يعمل البرنامج بدون إنترنت؟",
+        faq1A: "نعم! النسخة المكتبية من SyndiKi تعمل بشكل مستقل تماماً دون إنترنت. بياناتكم تبقى على حاسوبكم.",
+        faq2Q: "هل هو مناسب للسنديك المتطوع؟",
+        faq2A: "بالتأكيد. لقد صممنا الواجهة لتبسيط الأمور لغير المحاسبين لتكون بديهية وسهلة الاستخدام.",
+        faq3Q: "هل يمكنني إدارة عدة عمارات؟",
+        faq3A: "نعم، يتيح لك SyndiKi إدارة عدة إقامات أو مجمعات سكنية في نفس البرنامج.",
 
-        // Demo Section
-        demoTitle: "احصل على تجربة مجانية",
-        demoSubtitle: "جرب SyndiKi الآن مجاناً.",
-        demoBuilding: "اسم الإقامة / العمارة",
-        demoContactType: "وسيلة التواصل",
-        demoContactValue: "رقم الهاتف / البريد الإلكتروني",
-        demoSubmit: "الحصول على الروابط",
-        demoSuccessTitle: "لنبدأ !",
-        demoSuccessDesc: "إليك روابط الدخول. سيتم إرسال بيانات الدخول إلى وسيلة التواصل الخاصة بك.",
-        demoLinkOffline: "تحميل (بدون أنترنت)",
-        demoLinkOnline: "الدخول للنسخة السحابية",
-        demoCheckContact: "تحقق من الواتساب / البريد الإلكتروني للحصول على بيانات الدخول.",
+        // Contact
+        contactTitle: "اتصل بنا",
+        contactSubtitle: "لديك سؤال؟ تريد تجربة البرنامج؟ نحن هنا للمساعدة.",
+        formName: "الاسم الكامل",
+        formPhone: "رقم الهاتف",
+        formMessage: "رسالتك",
+        formSend: "إرسال",
 
-        statBuildings: "عمارة مسيرة",
-        statOffline: "دون أنترنت وآمن",
-        statSupport: "دعم فني",
-        ctaTitle: "مستعد لتسهيل التسيير ؟",
-        ctaSubtitle: "حمل SyndiKi الآن وتحكم في إدارة عمارتك.",
-        versionInfo: "نسخة 3.4.0 v5 • 64-بت",
-        copyright: "جميع الحقوق محفوظة."
+        // CTA
+        ctaTitle: "مستعد لتسهيل التسيير؟",
+        ctaSubtitle: "حمل SyndiKi الآن وتحكم في إدارة إقامتك.",
+        downloadWindows: "تحميل للويندوز",
+        copyright: "جميع الحقوق محفوظة.",
+        footerPrivacy: "سياسة الخصوصية",
+        footerTerms: "شروط الاستخدام",
+
+        // Add missing features
+        featAllAccess: "وصول كامل",
+        featUpdates: "تحديثات متضمنة",
+        featSupport: "دعم عبر واتساب",
+        featSupportVIP: "دعم مخصص 24/7",
+        featNoCommit: "بدون التزام"
     }
 };
 
+const pricingPlans = {
+    desktop: [
+        { nameKey: 'planTrial', price: '0', currency: 'DH', periodKey: 'period24h', features: ['featAllAccess', 'featNoCommit', 'featSupport'], btnKey: 'navPricing', btnType: 'secondary', link: '#contact' },
+        { nameKey: 'planMonthly', price: '200', currency: 'DH', periodKey: 'periodMonth', features: ['featAllAccess', 'featUpdates', 'featSupport'], btnKey: 'btnSubscribe', btnType: 'secondary', link: 'https://wa.me/212755837268' },
+        { nameKey: 'plan12Months', price: '2000', currency: 'DH', periodKey: 'periodYear', features: ['featAllAccess', 'featUpdates', 'featSupportVIP'], btnKey: 'btnSubscribe', btnType: 'primary', popular: true, link: 'https://wa.me/212755837268' },
+        { nameKey: 'planLifetime', price: '5000', currency: 'DH', periodKey: 'periodLife', features: ['featAllAccess', 'featUpdates', 'featSupportVIP'], btnKey: 'btnBuyNow', btnType: 'primary', link: 'https://wa.me/212755837268' }
+    ],
+    cloud: [
+        { nameKey: 'planMonthly', price: '300', currency: 'DH', periodKey: 'periodMonth', features: ['featAllAccess', 'featUpdates', 'featSupport'], btnKey: 'btnSubscribe', btnType: 'secondary', link: 'https://wa.me/212755837268' },
+        { nameKey: 'plan12Months', price: '3000', currency: 'DH', periodKey: 'periodYear', features: ['featAllAccess', 'featUpdates', 'featSupportVIP'], btnKey: 'btnSubscribe', btnType: 'primary', popular: true, link: 'https://wa.me/212755837268' },
+        { nameKey: 'planLifetime', price: '6000', currency: 'DH', periodKey: 'periodLife', features: ['featAllAccess', 'featUpdates', 'featSupportVIP'], btnKey: 'btnBuyNow', btnType: 'primary', link: 'https://wa.me/212755837268' }
+    ]
+};
+
+const showcaseData = {
+    dashboard: {
+        img: 'assets/dashboard_pro.png',
+        title: 'showcaseDashboardTitle',
+        desc: 'showcaseDashboardDesc',
+        feats: ['showcaseDashFeat1', 'showcaseDashFeat2', 'showcaseDashFeat3']
+    },
+    residents: {
+        img: 'assets/residents_pro.png',
+        title: 'showcaseResidentsTitle',
+        desc: 'showcaseResidentsDesc',
+        feats: ['showcaseResFeat1', 'showcaseResFeat2', 'showcaseResFeat3']
+    },
+    payments: {
+        img: 'assets/payments_pro.png',
+        title: 'showcasePaymentsTitle',
+        desc: 'showcasePaymentsDesc',
+        feats: ['showcasePayFeat1', 'showcasePayFeat2', 'showcasePayFeat3']
+    },
+    expenses: {
+        img: 'assets/expenses_pro.png',
+        title: 'showcaseExpensesTitle',
+        desc: 'showcaseExpensesDesc',
+        feats: ['showcaseExpFeat1', 'showcaseExpFeat2', 'showcaseExpFeat3']
+    },
+    reports: {
+        img: 'assets/reports_pro.png',
+        title: 'showcaseReportsTitle',
+        desc: 'showcaseReportsDesc',
+        feats: ['showcaseRepFeat1', 'showcaseRepFeat2', 'showcaseRepFeat3']
+    },
+    receipt: {
+        img: 'assets/receipt_pro.png',
+        title: 'showcaseReceiptTitle',
+        desc: 'showcaseReceiptDesc',
+        feats: ['showcaseRecFeat1', 'showcaseRecFeat2', 'showcaseRecFeat3']
+    }
+};
+
+let currentLang = localStorage.getItem('syndiki_lang') || 'fr';
+let currentPricingType = 'desktop';
+
+const html = document.documentElement;
 const langToggle = document.getElementById('langToggle');
 const currentLangSpan = document.getElementById('currentLang');
-const html = document.documentElement;
 
-// Initialize language
-const savedLang = localStorage.getItem('syndiki_lang') || 'fr';
-setLanguage(savedLang);
-
-langToggle.addEventListener('click', () => {
-    const currentLang = html.getAttribute('lang');
-    const newLang = currentLang === 'fr' ? 'ar' : 'fr';
-    setLanguage(newLang);
-});
-
-function setLanguage(lang) {
-    // Update DOM attributes
-    html.setAttribute('lang', lang);
-    html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
-    // Update Button Text
-    currentLangSpan.textContent = lang === 'fr' ? 'العربية' : 'Français';
-
-    // Update Translations
-    const texts = translations[lang];
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (texts[key]) {
-            el.innerHTML = texts[key];
-        }
-    });
-
-    // Save Preference
-    localStorage.setItem('syndiki_lang', lang);
+function init() {
+    setLanguage(currentLang);
+    updatePricing('desktop');
+    setupEventListeners();
 }
 
-// Contact Form Handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('contactName').value;
-        const phone = document.getElementById('contactPhone').value;
-        const message = document.getElementById('contactMessage').value;
-
-        const text = `Bonjour, je suis ${name}.\nTéléphone: ${phone}\nMessage: ${message}`;
-        const encodedText = encodeURIComponent(text);
-        const url = `https://wa.me/212755837268?text=${encodedText}`;
-
-        window.open(url, '_blank');
-
-        // Show success message
-        const isAr = html.getAttribute('lang') === 'ar';
-        const msgTitle = isAr ? "تم إرسال الرسالة !" : "Message Envoyé !";
-        const msgDesc = isAr ? "سنرد عليك عبر واتساب في أقرب وقت ممكن." : "Nous vous répondrons sur WhatsApp dans les plus brefs délais.";
-
-        contactForm.innerHTML = `
-            <div style="text-align: center; color: #4ade80; padding: 20px;">
-                <i class="fa-solid fa-check-circle" style="font-size: 3rem; margin-bottom: 20px;"></i>
-                <h3>${msgTitle}</h3>
-                <p style="color: var(--text-dim); margin-top: 10px;">${msgDesc}</p>
-            </div>
-        `;
-    });
-}
-
-// Demo Form Handling
-const demoForm = document.getElementById('demoForm');
-if (demoForm) {
-    demoForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const building = document.getElementById('demoBuildingName').value;
-        const contactType = document.getElementById('demoContactType').value;
-        const contactValue = document.getElementById('demoContactValue').value;
-        const submitBtn = demoForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
-
-        // Show loading state
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Traitement...';
-
-        // Prepare data for FormSubmit
-        const formData = new FormData();
-        formData.append('building', building);
-        formData.append('contact_type', contactType);
-        formData.append('contact', contactValue);
-        // Important: Use your real email here to receive the leads!
-        // The first time you submit, you will receive an activation email.
-        const DESTINATION_EMAIL = "info@syndiki.online"; // REPLACE_ME
-        formData.append('_subject', 'Nouvelle demande de démo SyndiKi');
-        formData.append('_template', 'table');
-        formData.append('_captcha', 'false');
-
-        // Send to FormSubmit
-        fetch(`https://formsubmit.co/ajax/${DESTINATION_EMAIL}`, {
-            method: 'POST',
-            body: formData
-        })
-            .then(response => {
-                // Success: Show links
-                document.getElementById('demoContent').style.display = 'none';
-                document.getElementById('demoSuccess').style.display = 'block';
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                // Graceful degradation: Show links anyway if backend fails
-                document.getElementById('demoContent').style.display = 'none';
-                document.getElementById('demoSuccess').style.display = 'block';
-            })
-            .finally(() => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            });
-    });
-}
-
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navMenu = document.getElementById('navMenu');
-
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const icon = menuToggle.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-xmark');
-        } else {
-            icon.classList.remove('fa-xmark');
-            icon.classList.add('fa-bars');
-        }
+function setupEventListeners() {
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'fr' ? 'ar' : 'fr';
+        setLanguage(currentLang);
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            menuToggle.querySelector('i').classList.remove('fa-xmark');
-            menuToggle.querySelector('i').classList.add('fa-bars');
-        }
-    });
-
-    // Close menu when clicking a link
-    navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            menuToggle.querySelector('i').classList.remove('fa-xmark');
-            menuToggle.querySelector('i').classList.add('fa-bars');
+    // Showcase switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const target = e.target.getAttribute('data-target');
+            updateShowcase(target, e.target);
         });
     });
+
+    // Pricing switching
+    document.getElementById('tabDesktop').addEventListener('click', () => updatePricing('desktop'));
+    document.getElementById('tabCloud').addEventListener('click', () => updatePricing('cloud'));
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+    // Contact Form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const text = `Contact: ${document.getElementById('contactName').value}\nPhone: ${document.getElementById('contactPhone').value}\nMessage: ${document.getElementById('contactMessage').value}`;
+            window.open(`https://wa.me/212755837268?text=${encodeURIComponent(text)}`, '_blank');
+        });
+    }
 }
+
+function setLanguage(lang) {
+    html.setAttribute('lang', lang);
+    html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    currentLangSpan.textContent = lang === 'fr' ? 'العربية' : 'Français';
+    
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (translations[lang][key]) el.placeholder = translations[lang][key];
+    });
+
+    localStorage.setItem('syndiki_lang', lang);
+    
+    // Refresh dynamic parts
+    updatePricing(currentPricingType);
+    const activeTab = document.querySelector('.tab-btn.active');
+    if (activeTab) updateShowcase(activeTab.getAttribute('data-target'), activeTab, false);
+}
+
+function updateShowcase(target, btn, animate = true) {
+    const data = showcaseData[target];
+    if (!data) return;
+
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const img = document.getElementById('showcaseImg');
+    const title = document.getElementById('showcaseTitleText');
+    const desc = document.getElementById('showcaseDescText');
+    const list = document.getElementById('showcaseList');
+
+    img.src = data.img;
+    title.setAttribute('data-i18n', data.title);
+    desc.setAttribute('data-i18n', data.desc);
+    title.innerHTML = translations[currentLang][data.title];
+    desc.innerHTML = translations[currentLang][data.desc];
+    
+    list.innerHTML = data.feats.map(f => `<li data-i18n="${f}"><i class="fa-solid fa-check"></i> ${translations[currentLang][f]}</li>`).join('');
+}
+
+function updatePricing(type) {
+    currentPricingType = type;
+    const grid = document.getElementById('pricingGrid');
+    const plans = pricingPlans[type];
+    
+    document.getElementById('tabDesktop').classList.toggle('active', type === 'desktop');
+    document.getElementById('tabCloud').classList.toggle('active', type === 'cloud');
+
+    // Add explicit column class for grid stability
+    grid.className = `pricing-grid cols-${plans.length}`;
+
+    grid.innerHTML = plans.map(plan => `
+        <div class="price-card ${plan.popular ? 'popular' : ''}">
+            ${plan.popular ? `<div class="popular-tag" data-i18n="tagPopular">${translations[currentLang].tagPopular}</div>` : ''}
+            <h4 data-i18n="${plan.nameKey}">${translations[currentLang][plan.nameKey]}</h4>
+            <div class="price-value">${plan.price} <span>${plan.currency} ${translations[currentLang][plan.periodKey]}</span></div>
+            <ul class="price-features">
+                ${plan.features.map(f => `<li><i class="fa-solid fa-check"></i> <span data-i18n="${f}">${translations[currentLang][f]}</span></li>`).join('')}
+            </ul>
+            <a href="${plan.link}" class="btn btn-${plan.btnType}" style="width: 100%" data-i18n="${plan.btnKey}">${translations[currentLang][plan.btnKey]}</a>
+        </div>
+    `).join('');
+}
+
+document.addEventListener('DOMContentLoaded', init);
