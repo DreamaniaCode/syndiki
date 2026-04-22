@@ -44,6 +44,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 body {
@@ -241,18 +242,37 @@ header.scrolled {
 @media (max-width: 1000px) {
     .nav-links {
         position: fixed;
-        inset: 0;
-        left: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         background: rgba(3, 7, 18, 0.98);
         backdrop-filter: blur(25px);
         flex-direction: column;
         justify-content: center;
         padding: 4rem 2rem;
-        transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
     }
     
-    .nav-links.active { left: 0; }
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    
+    [dir="rtl"] .nav-links {
+        transform: translateY(-20px);
+    }
+    
+    [dir="rtl"] .nav-links.active {
+        transform: translateY(0);
+    }
     
     .menu-toggle {
         display: block !important;
@@ -410,7 +430,11 @@ header.scrolled {
 }
 
 @media (max-width: 768px) {
-    .feature-card { grid-column: span 12; }
+    .feature-card { grid-column: span 12; padding: 2rem 1.5rem; }
+    .hero { padding-top: 8rem; }
+    .price-card { padding: 3rem 1.5rem; }
+    .contact-info, .contact-form { padding: 2rem 1.5rem; }
+    .showcase-content { padding: 1.5rem; }
 }
 
 /* Product Showcase Tabs */
@@ -608,8 +632,7 @@ footer { padding: 6rem 0 3rem; border-top: 1px solid var(--border-glass); }
 .legal-links { display: flex; gap: 2rem; }
 .legal-links a { color: inherit; text-decoration: none; }
 
-/* Floating WhatsApp */
-.wa-float {
+.wa-float { /* Floating WhatsApp */
     position: fixed;
     bottom: 2.5rem;
     right: 2.5rem;
@@ -627,6 +650,16 @@ footer { padding: 6rem 0 3rem; border-top: 1px solid var(--border-glass); }
     z-index: 1000;
 }
 .wa-float:hover { transform: scale(1.1) rotate(10deg); }
+
+@media (max-width: 768px) {
+    .wa-float {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 56px;
+        height: 56px;
+        font-size: 2rem;
+    }
+}
 
 /* Animations */
 .animate-on-scroll { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
