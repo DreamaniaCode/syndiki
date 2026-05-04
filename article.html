@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Article - syndiki.online</title>
+    <meta name="description" id="pageMetaDesc" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article-content { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+        .article-hero { height: 400px; width: 100%; object-fit: cover; border-radius: 16px; margin-bottom: 40px; }
+        .article-body { font-size: 1.15rem; line-height: 1.8; color: #334155; }
+        .article-body h2 { margin: 30px 0 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo"><a href="index.html"><img src="assets/logo.png" alt="Logo" class="logo-img" style="mix-blend-mode: multiply;"></a></div>
+            <a href="index.html" class="btn btn-secondary">Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <main id="articleView" class="container article-content">
+        <div id="loading">Chargement de l'article...</div>
+        <div id="content" class="hidden">
+            <span id="category" style="color: var(--primary); font-weight: 600; text-transform: uppercase;"></span>
+            <h1 id="title" style="font-size: 3rem; margin: 10px 0 40px;"></h1>
+            <img id="heroImage" class="article-hero" src="" alt="">
+            <div id="body" class="article-body"></div>
+        </div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const slug = urlParams.get('slug');
+
+        async function loadArticle() {
+            const apiBase = window.location.port === '3000' ? '' : 'http://localhost:3000';
+            const res = await fetch(apiBase + '/api/posts');
+            const posts = await res.json();
+            const post = posts.find(p => p.slug === slug);
+
+            if (!post) {
+                document.getElementById('articleView').innerHTML = '<h1>Article non trouvé</h1><a href="index.html">Retour</a>';
+                return;
+            }
+
+            document.title = post.metaTitle || post.title;
+            document.getElementById('pageMetaDesc').setAttribute('content', post.metaDesc || '');
+            
+            document.getElementById('category').textContent = post.category;
+            document.getElementById('title').textContent = post.title;
+            document.getElementById('heroImage').src = post.image || 'https://via.placeholder.com/1200x600';
+            document.getElementById('body').innerHTML = post.content;
+            
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('content').classList.remove('hidden');
+        }
+
+        if (slug) loadArticle();
+        else window.location.href = 'index.html';
+    </script>
+</body>
+</html>

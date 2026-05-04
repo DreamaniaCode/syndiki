@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Blog - syndiki.online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <style>
+        body { background: #f1f5f9; min-height: 100vh; display: flex; }
+        .sidebar { width: 260px; background: #093b60; color: white; padding: 30px 20px; display: flex; flex-direction: column; gap: 30px; position: fixed; height: 100vh; }
+        .sidebar h2 { font-size: 1.25rem; color: #fff; display: flex; align-items: center; gap: 10px; }
+        .nav-link { color: rgba(255,255,255,0.7); text-decoration: none; display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; transition: 0.3s; cursor: pointer; }
+        .nav-link:hover, .nav-link.active { background: rgba(255,255,255,0.1); color: white; }
+        
+        .main-content { margin-left: 260px; flex: 1; padding: 40px; }
+        .dashboard-card { background: white; padding: 30px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .hidden { display: none; }
+        
+        .post-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f1f5f9; }
+        .status-badge { font-size: 0.7rem; padding: 2px 8px; border-radius: 100px; font-weight: 600; margin-left: 10px; }
+        .status-published { background: #dcfce7; color: #166534; }
+        .status-draft { background: #fef9c3; color: #854d0e; }
+        
+        .btn-action { border: none; background: none; cursor: pointer; padding: 8px; color: #64748b; transition: 0.2s; }
+        .btn-action:hover { color: var(--primary); }
+        .btn-delete:hover { color: #ef4444; }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.85rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; font-family: inherit; }
+        
+        .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .modal-content { background: white; padding: 30px; border-radius: 12px; width: 400px; }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2><i class="fa-solid fa-gauge"></i> SyndiKi CMS</h2>
+        <div class="nav-link active" id="nav-list" onclick="showTab('list')"><i class="fa-solid fa-list"></i> Tous les articles</div>
+        <div class="nav-link" id="nav-new" onclick="showTab('new')"><i class="fa-solid fa-plus"></i> Nouvel article</div>
+        <div class="nav-link" style="margin-top: auto;" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Déconnexion</div>
+    </div>
+
+    <main class="main-content">
+        <!-- LIST TAB -->
+        <div id="tab-list" class="dashboard-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h1>Gestion des Articles</h1>
+                <button class="btn btn-primary" onclick="prepareNewPost()">+ Créer un article</button>
+            </div>
+            <div id="postsList">Chargement...</div>
+        </div>
+
+        <!-- EDITOR TAB -->
+        <div id="tab-new" class="dashboard-card hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h1 id="editorTitle">Nouvel Article</h1>
+                <button class="btn btn-secondary" onclick="openAIModal()"><i class="fa-solid fa-robot"></i> Générer avec l'IA</button>
+            </div>
+            <form id="postForm">
+                <input type="hidden" id="postId">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Titre de l'article</label>
+                        <input type="text" id="postTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Catégorie</label>
+                        <select id="postCategory">
+                            <option>Législation</option>
+                            <option>Conseils</option>
+                            <option>Mise à jour</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Image de couverture</label>
+                        <input type="file" id="postImage" accept="image/*">
+                        <div id="currentImage" style="font-size: 0.75rem; margin-top: 5px; color: #64748b;"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>État de publication</label>
+                        <select id="postStatus">
+                            <option value="published">Publié (Public)</option>
+                            <option value="draft">Brouillon (Privé)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Meta Description (SEO)</label>
+                    <input type="text" id="metaDesc" placeholder="160 caractères max">
+                </div>
+
+                <div class="form-group" style="margin-top: 20px; margin-bottom: 20px;">
+                    <label>Contenu</label>
+                    <textarea id="postContent"></textarea>
+                </div>
+
+                <div style="display: flex; gap: 15px;">
+                    <button type="submit" class="btn btn-primary">Enregistrer l'article</button>
+                    <button type="button" class="btn btn-secondary" onclick="showTab('list')">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- AI MODAL -->
+    <div id="aiModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 15px;">Rédaction IA (SEO)</h2>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 20px;">Entrez un sujet et laissez l'IA rédiger un article optimisé.</p>
+            <input type="text" id="aiTopic" placeholder="Sujet: ex. Avantages du syndic professionnel" style="width:100%; padding:10px; margin-bottom:20px;">
+            <div style="display: flex; gap: 10px;">
+                <button class="btn btn-primary" onclick="generateAI()" id="btnGen">Générer</button>
+                <button class="btn btn-secondary" onclick="closeAIModal()">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = window.location.port === '3000' ? '' : 'http://localhost:3000';
+        let allPosts = [];
+
+        async function checkAuth() {
+            const res = await fetch(API_BASE + '/api/check-auth');
+            const data = await res.json();
+            if (!data.isLoggedIn) window.location.href = 'login.html';
+        }
+        checkAuth();
+
+        function showTab(tab) {
+            document.getElementById('tab-list').classList.add('hidden');
+            document.getElementById('tab-new').classList.add('hidden');
+            document.getElementById('nav-list').classList.remove('active');
+            document.getElementById('nav-new').classList.remove('active');
+            
+            document.getElementById('tab-' + tab).classList.remove('hidden');
+            document.getElementById('nav-' + (tab === 'list' ? 'list' : 'new')).classList.add('active');
+            
+            if (tab === 'list') loadPosts();
+        }
+
+        async function loadPosts() {
+            const res = await fetch(API_BASE + '/api/posts');
+            allPosts = await res.json();
+            const container = document.getElementById('postsList');
+            container.innerHTML = allPosts.map(p => `
+                <div class="post-item">
+                    <div>
+                        <strong style="color: #093b60">${p.title}</strong>
+                        <span class="status-badge ${p.status === 'published' ? 'status-published' : 'status-draft'}">
+                            ${p.status === 'published' ? 'Publié' : 'Brouillon'}
+                        </span><br>
+                        <small style="color: #94a3b8">${p.category} | ${new Date(p.date).toLocaleDateString()}</small>
+                    </div>
+                    <div>
+                        <button class="btn-action" onclick="editPost('${p.id}')"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn-action btn-delete" onclick="deletePost('${p.id}')"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            `).join('');
+        }
+        loadPosts();
+
+        function prepareNewPost() {
+            document.getElementById('editorTitle').textContent = 'Nouvel Article';
+            document.getElementById('postId').value = '';
+            document.getElementById('postForm').reset();
+            tinymce.get('postContent').setContent('');
+            document.getElementById('currentImage').textContent = '';
+            showTab('new');
+        }
+
+        function editPost(id) {
+            const post = allPosts.find(p => p.id === id);
+            if (!post) return;
+
+            document.getElementById('editorTitle').textContent = 'Modifier l\'Article';
+            document.getElementById('postId').value = post.id;
+            document.getElementById('postTitle').value = post.title;
+            document.getElementById('postCategory').value = post.category;
+            document.getElementById('postStatus').value = post.status || 'published';
+            document.getElementById('metaDesc').value = post.metaDesc || '';
+            tinymce.get('postContent').setContent(post.content);
+            document.getElementById('currentImage').textContent = post.image ? 'Image actuelle : ' + post.image : '';
+
+            showTab('new');
+        }
+
+        async function deletePost(id) {
+            if (!confirm('Supprimer cet article ?')) return;
+            await fetch(API_BASE + '/api/posts/' + id, { method: 'DELETE' });
+            loadPosts();
+        }
+
+        tinymce.init({
+            selector: '#postContent',
+            height: 400,
+            plugins: 'lists link image code table',
+            toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | code'
+        });
+
+        document.getElementById('postForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('postId').value;
+            const formData = new FormData();
+            formData.append('title', document.getElementById('postTitle').value);
+            formData.append('category', document.getElementById('postCategory').value);
+            formData.append('status', document.getElementById('postStatus').value);
+            formData.append('metaDesc', document.getElementById('metaDesc').value);
+            formData.append('content', tinymce.get('postContent').getContent());
+            if (document.getElementById('postImage').files[0]) {
+                formData.append('image', document.getElementById('postImage').files[0]);
+            }
+
+            const url = id ? '/api/posts/' + id : '/api/posts';
+            const method = id ? 'PUT' : 'POST';
+
+            const res = await fetch(API_BASE + url, { method: method, body: formData });
+            if (res.ok) {
+                alert(id ? 'Article mis à jour !' : 'Article publié !');
+                showTab('list');
+            }
+        });
+
+        function openAIModal() { document.getElementById('aiModal').classList.remove('hidden'); }
+        function closeAIModal() { document.getElementById('aiModal').classList.add('hidden'); }
+
+        async function generateAI() {
+            const topic = document.getElementById('aiTopic').value;
+            const btn = document.getElementById('btnGen');
+            if (!topic) return;
+            btn.disabled = true; btn.textContent = 'Génération...';
+            try {
+                const res = await fetch(API_BASE + '/api/ai/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ topic })
+                });
+                const data = await res.json();
+                document.getElementById('postTitle').value = data.title;
+                document.getElementById('metaDesc').value = data.metaDescription;
+                tinymce.get('postContent').setContent(data.content);
+                closeAIModal();
+            } catch (e) { alert('Vérifiez votre clé API OpenRouter dans le fichier .env'); }
+            finally { btn.disabled = false; btn.textContent = 'Générer'; }
+        }
+
+        async function logout() {
+            await fetch(API_BASE + '/api/logout', { method: 'POST' });
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
